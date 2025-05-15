@@ -17,29 +17,35 @@ if intencion == "Abrir una LLC":
         estado = st.selectbox("¿En qué estado querés abrirla?", ["", "Florida", "Delaware", "New Mexico", "Wyoming"])
         tipo = st.selectbox("¿La manejarás solo o con otros socios?", ["", "Single Member", "Multi Member"])
     elif conocimiento == "No":
-        st.markdown("**Estados recomendados:**")
-        st.markdown("- **New Mexico:** Bajo costo, simple, ideal para operar online.")
-        st.markdown("- **Florida:** Excelente para real estate y cuentas bancarias.")
-        st.markdown("- **Delaware:** Prestigio legal, ideal si buscás escalar o atraer inversión.")
-        st.markdown("¿Querés contarnos si vas a comprar un inmueble o operar online?")
-        tipo = st.selectbox("¿La manejarás solo o con otros socios?", ["", "Single Member", "Multi Member"])
+        st.markdown("### ¿Qué es una LLC y por qué puede servirte?")
+        st.markdown(
+            "- Una LLC (Limited Liability Company) es una estructura legal que permite a extranjeros abrir una empresa en EE.UU. sin necesidad de residencia ni visa.\n"
+            "- Es útil para vender servicios online, hacer inversiones inmobiliarias, operar un e-commerce o abrir una cuenta bancaria.\n"
+            "- Protege tu patrimonio personal, permite operar en dólares, emitir facturas y no tributar en EE.UU. si no hay actividad allí.\n"
+            "- ¿Querés saber si te conviene abrir una LLC en tu caso particular?"
+        )
+        st.markdown("👉 [Agendá una llamada sin compromiso](https://calendly.com/financers/llamada)")
 
 elif intencion == "Declarar impuestos":
     tiene_llc = st.radio("¿Ya tenés una LLC formada?", ["Sí", "No"])
     if tiene_llc == "Sí":
-        tipo = st.selectbox("¿Tu LLC es Single Member o Multi Member?", ["", "Single Member", "Multi Member"])
+        st.markdown("¿Podés confirmarme lo siguiente?")
+        estado = st.selectbox("¿En qué estado está registrada tu LLC?", ["", "Florida", "Delaware", "New Mexico", "Wyoming"])
+        tipo = st.selectbox("¿Es Single Member o Multi Member?", ["", "Single Member", "Multi Member"])
+        st.radio("¿Tiene bienes o activos a su nombre?", ["Sí", "No"])
+        st.radio("¿Tributa como LLC o como Corporación?", ["LLC", "C-Corp", "No lo sé"])
     else:
         st.warning("Para declarar impuestos primero debés tener una LLC. Podemos ayudarte con la apertura.")
 
 elif intencion == "Abrir una cuenta bancaria":
-    tiene_llc = st.radio("¿Ya tenés una LLC formada con EIN?", ["Sí", "No"])
-    if tiene_llc == "No":
-        st.warning("Para abrir una cuenta bancaria necesitás una LLC registrada y el EIN. Podemos ayudarte con eso.")
+    tiene_llc = st.radio("¿Ya tenés una LLC con EIN?", ["Sí", "No"])
+    if tiene_llc == "Sí":
+        st.markdown("### Opciones disponibles:")
+        st.markdown("- **Mercury o Relay:** 100% online, sin depósito mínimo – Costo: USD 250")
+        st.markdown("- **OceanBank o IFB:** mínimo USD 10.000 a 25.000 – Costo: USD 1500")
+        st.markdown("¿Preferís que avancemos con alguna opción o querés agendar una videollamada?")
     else:
-        st.markdown("Podemos ayudarte a abrir cuentas en:")
-        st.markdown("- **Mercury:** 100% online, sin presencialidad")
-        st.markdown("- **Relay:** multiusuario, ideal para equipos")
-        st.markdown("- Bancos físicos en EE.UU. si tenés dirección o visita programada")
+        st.warning("Para abrir una cuenta bancaria necesitás una LLC y EIN. Podemos ayudarte con todo el proceso.")
 
 elif intencion == "Enviar una consulta personalizada":
     st.subheader("Dejanos tu consulta y te contactamos personalmente")
@@ -54,82 +60,74 @@ elif intencion == "Enviar una consulta personalizada":
         else:
             st.warning("Por favor completá todos los campos.")
 
-# RESPUESTAS DETALLADAS
+# RESPUESTAS DETALLADAS PARA DECLARACIÓN DE IMPUESTOS
+if intencion == "Declarar impuestos" and estado and tipo:
+    st.markdown("### Detalles para tu LLC")
 
-respuestas = {
-    "llc_florida_single": (
-        "**LLC Single Member en Florida**\n\n"
-        "- Costo total estimado: USD 739\n"
-        "- Ideal para inversiones inmobiliarias y apertura de cuenta bancaria\n"
-        "- Buena reputación legal y reconocimiento internacional\n"
-        "- Atención: puede aplicar Estate Tax (hasta 40%) si no se usa una estructura offshore\n\n"
-        "**PDF sugerido:** Presupuesto SM - Florida.pdf\n"
-        "**Artículo:** https://www.financers.com.ar/estructura-en-bvi-para-evitar-el-estate-inheritance-tax-en-usa/\n"
-        "**Agendá tu llamada:** https://calendly.com/financers/llamada"
-    ),
-    "llc_florida_multi": (
-        "**LLC Multi Member en Florida**\n\n"
-        "- Costo estimado: USD 1040\n"
-        "- Requiere Formulario 1065 + K-1 por socio\n"
-        "- Recomendamos estructura offshore si hay real estate y socios extranjeros\n\n"
-        "**PDF sugerido:** Presupuesto MM - Florida.pdf\n"
-        "**Agendá tu llamada:** https://calendly.com/financers/llamada"
-    ),
-    "llc_new_mexico_single": (
-        "**LLC Single Member en New Mexico**\n\n"
-        "- Costo estimado: USD 589\n"
-        "- No requiere publicación de miembros\n"
-        "- Ideal para freelancers, consultores y operaciones online\n"
-        "- Mantenimiento anual bajo\n\n"
-        "**PDF sugerido:** Presupuesto SM - New Mexico.pdf\n"
-        "**Agendá tu llamada:** https://calendly.com/financers/llamada"
-    ),
-    "llc_delaware_single": (
-        "**LLC Single Member en Delaware**\n\n"
-        "- Costo estimado: USD 739\n"
-        "- Prestigio legal a nivel internacional\n"
-        "- Recomendado para startups, tecnología y negocios con socios\n\n"
-        "**PDF sugerido:** Presupuesto SM - Delaware.pdf\n"
-        "**Agendá tu llamada:** https://calendly.com/financers/llamada"
-    ),
-    "impuestos_single": (
-        "**Declaración de impuestos – LLC Single Member**\n\n"
-        "- Formulario 5472 + libro contable obligatorio\n"
-        "- Si hubo ingresos, presentar Schedule C\n"
-        "- Multa por no presentar: hasta USD 25.000\n"
-        "- Tiempo estimado: 3 a 5 días hábiles\n\n"
-        "**Agendá tu llamada:** https://calendly.com/financers/llamada"
-    ),
-    "impuestos_multi": (
-        "**Declaración de impuestos – LLC Multi Member**\n\n"
-        "- Formulario 1065 obligatorio\n"
-        "- Cada socio debe recibir un K-1\n"
-        "- W-8BEN-E si los socios son extranjeros\n"
-        "- Multa por no presentar: USD 210 por socio por mes\n\n"
-        "**Agendá tu llamada:** https://calendly.com/financers/llamada"
-    ),
-    "cuenta_sin_llc": (
-        "**Apertura de cuenta bancaria**\n\n"
-        "- Requiere LLC + EIN\n"
-        "- Podemos ayudarte a abrir cuenta en Mercury, Relay o bancos físicos\n"
-        "- Si no tenés estructura, sugerimos abrir primero una LLC\n\n"
-        "**Agendá tu llamada:** https://calendly.com/financers/llamada"
-    )
-}
+    if estado == "Florida":
+        if tipo == "Single Member":
+            st.markdown(
+                "- **Costo declaración IRS:** USD 500\n"
+                "- Agente registrado: USD 100\n"
+                "- Impuesto estatal (Sunbiz): USD 139\n"
+                "- PDF: Presupuesto Florida SM"
+            )
+        else:
+            st.markdown(
+                "- **Costo declaración IRS:** USD 800\n"
+                "- Agente registrado: USD 100\n"
+                "- Impuesto estatal (Sunbiz): USD 139\n"
+                "- PDF: Presupuesto Florida MM"
+            )
 
-def generar_respuesta(intencion, estado=None, tipo=None):
-    key = ""
-    if intencion == "Abrir una LLC" and estado and tipo:
-        key = f"llc_{estado.lower().replace(' ', '_')}_{tipo.lower().split()[0]}"
-    elif intencion == "Declarar impuestos" and tipo:
-        key = f"impuestos_{tipo.lower().split()[0]}"
-    elif intencion == "Abrir una cuenta bancaria":
-        key = "cuenta_sin_llc"
-    return respuestas.get(key, "Podés contarnos un poco más sobre tu caso así te orientamos mejor.")
+    elif estado == "New Mexico":
+        if tipo == "Single Member":
+            st.markdown(
+                "- **Costo declaración IRS:** USD 500\n"
+                "- Agente registrado: USD 100\n"
+                "- Impuesto estatal (Renovación): USD 0\n"
+                "- PDF: Presupuesto NM SM"
+            )
+        else:
+            st.markdown(
+                "- **Costo declaración IRS:** USD 800\n"
+                "- Agente registrado: USD 100\n"
+                "- Impuesto estatal (Renovación): USD 0\n"
+                "- PDF: Presupuesto NM MM"
+            )
 
-# Mostrar respuesta si corresponde
-if intencion in ["Abrir una LLC", "Declarar impuestos", "Abrir una cuenta bancaria"]:
-    if st.button("Ver respuesta detallada"):
-        resultado = generar_respuesta(intencion, estado, tipo)
-        st.markdown("### Resultado")
-        st.markdown(resultado)
+    elif estado == "Wyoming":
+        if tipo == "Single Member":
+            st.markdown(
+                "- **Costo declaración IRS:** USD 500\n"
+                "- Agente registrado: USD 100\n"
+                "- Impuesto estatal (Renovación): USD 62\n"
+                "- PDF: Presupuesto WY SM"
+            )
+        else:
+            st.markdown(
+                "- **Costo declaración IRS:** USD 800\n"
+                "- Agente registrado: USD 100\n"
+                "- Impuesto estatal (Renovación): USD 62\n"
+                "- PDF: Presupuesto WY MM"
+            )
+
+    elif estado == "Delaware":
+        if tipo == "Single Member":
+            st.markdown(
+                "- **Costo declaración IRS:** USD 500\n"
+                "- Agente registrado: USD 100\n"
+                "- Impuesto estatal (Franchise Tax): USD 300\n"
+                "- PDF: Presupuesto DE SM"
+            )
+        else:
+            st.markdown(
+                "- **Costo declaración IRS:** USD 800\n"
+                "- Agente registrado: USD 100\n"
+                "- Impuesto estatal (Franchise Tax): USD 300\n"
+                "- PDF: Presupuesto DE MM"
+            )
+
+st.markdown("---")
+st.markdown("**Nota importante:** Si no estás más de 183 días en EE.UU., no generás ingresos conectados a suelo americano (ECI), y tus ingresos no son de fuente estadounidense, no debés tributar. Pero sí debés presentar la declaración anual ante el IRS.")
+st.markdown("**Además:** Si tuvieras inmuebles o empleados en EE.UU., ahí sí deberías tributar y lo ideal sería una C-Corp que paga 21% de impuesto.")
