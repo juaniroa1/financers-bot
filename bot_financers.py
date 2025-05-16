@@ -133,7 +133,7 @@ elif intencion == "Preguntas frecuentes":
 - **Florida** es excelente si vas a invertir en inmuebles, operar con cuentas bancarias locales o necesitás tener presencia en un estado comercialmente activo.
 - **Delaware** es el más prestigioso desde el punto de vista legal. Muy recomendado para startups, empresas tecnológicas o si vas a levantar capital o tener inversores.
 
-👉 [Agendá tu llamada](https://calendly.com/financers/llamada) para evaluar cuál te conviene.
+👉 [Agendá tu llamada](https://calendly.com/financers/llamada)
 """),
             ("¿Qué incluye el servicio de apertura?",
              """Nuestro servicio incluye:
@@ -269,22 +269,6 @@ Solo necesitás:
             st.markdown(f"### {pregunta}")
             st.markdown(respuesta)
             break
-
-
-    seccion = st.selectbox("Seleccioná una categoría", list(categorias.keys()))
-    preguntas = [p[0] for p in categorias[seccion]]
-    seleccion = st.selectbox("Seleccioná una pregunta", preguntas)
-
-    for pregunta, respuesta in categorias[seccion]:
-        if pregunta == seleccion:
-            st.markdown(f"### {pregunta}")
-            st.markdown(respuesta)
-            break
-    st.subheader("¿Quiénes somos en FINANCERS?")
-    st.markdown(
-        "Somos un equipo contable-financiero offshore en Estados Unidos y Argentina que colabora con inversores, empresas tecnológicas y estudios contables de Latinoamérica.\n\n"
-        "Nos especializamos en ofrecer soluciones para que puedas gestionar tu contabilidad en Estados Unidos de manera segura y confiable, hablando tu mismo idioma y permitiéndote trabajar con tranquilidad."
-    )
 
 # Nota legal al pie
 st.markdown("---")
