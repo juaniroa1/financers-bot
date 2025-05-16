@@ -114,12 +114,12 @@ elif intencion == "Enviar una consulta personalizada":
 
 elif intencion == "¿Quiénes somos?":
     st.subheader("¿Quiénes somos en FINANCERS?")
-    st.markdown(
-        "Somos un equipo contable-financiero offshore en Estados Unidos y Argentina que colabora con inversores, empresas tecnológicas y estudios contables de Latinoamérica.
+st.markdown("""
+Somos un equipo contable-financiero offshore en Estados Unidos y Argentina que colabora con inversores, empresas tecnológicas y estudios contables de Latinoamérica.
 
-"
-        "Nos especializamos en ofrecer soluciones para que puedas gestionar tu contabilidad en Estados Unidos de manera segura y confiable, hablando tu mismo idioma y permitiéndote trabajar con tranquilidad."
-    )
+Nos especializamos en ofrecer soluciones para que puedas gestionar tu contabilidad en Estados Unidos de manera segura y confiable, hablando tu mismo idioma y permitiéndote trabajar con tranquilidad.
+""")
+
 
 elif intencion == "Preguntas frecuentes":
     st.subheader("Preguntas frecuentes")
