@@ -112,12 +112,168 @@ elif intencion == "Enviar una consulta personalizada":
         else:
             st.warning("Por favor completá todos los campos.")
 
-elif intencion == "¿Quiénes somos?":
+if intencion == "¿Quiénes somos?":
     st.subheader("¿Quiénes somos en FINANCERS?")
-    st.markdown(
-        "Somos un equipo contable-financiero offshore en Estados Unidos y Argentina que colabora con inversores, empresas tecnológicas y estudios contables de Latinoamérica.\n\n"
-        "Nos especializamos en ofrecer soluciones para que puedas gestionar tu contabilidad en Estados Unidos de manera segura y confiable, hablando tu mismo idioma y permitiéndote trabajar con tranquilidad."
-    )
+    st.markdown("""
+Somos un equipo contable-financiero offshore en Estados Unidos y Argentina que colabora con inversores, empresas tecnológicas y estudios contables de Latinoamérica.
+
+Nos especializamos en ofrecer soluciones para que puedas gestionar tu contabilidad en Estados Unidos de manera segura y confiable, hablando tu mismo idioma y permitiéndote trabajar con tranquilidad.
+""")
+
+elif intencion == "Preguntas frecuentes":
+    st.subheader("Preguntas frecuentes")
+
+    categorias = {
+        "Apertura de LLC": [
+            ("¿En qué estado me conviene crear la LLC?",
+             """Depende del objetivo de tu negocio:
+
+- **New Mexico** es ideal si buscás privacidad, bajo costo y no necesitás una imagen corporativa reconocida.
+- **Florida** es excelente si vas a invertir en inmuebles, operar con cuentas bancarias locales o necesitás tener presencia en un estado comercialmente activo.
+- **Delaware** es el más prestigioso desde el punto de vista legal. Muy recomendado para startups, empresas tecnológicas o si vas a levantar capital o tener inversores.
+
+👉 [Agendá tu llamada](https://calendly.com/financers/llamada)
+"""),
+            ("¿Qué incluye el servicio de apertura?",
+             """Nuestro servicio incluye:
+
+- Registro legal de la LLC ante el estado correspondiente
+- Obtención del EIN (número de identificación fiscal) ante el IRS
+- Alta del agente registrado (Registered Agent)
+- Operating Agreement
+- Presentación del BOI (Beneficial Ownership Information)
+- Asistencia para apertura de cuenta bancaria
+- Asesoría en español durante todo el proceso
+
+👉 [Agendá tu llamada](https://calendly.com/financers/llamada)
+"""),
+            ("¿Qué significa ser Single Member o Multi Member?",
+             """- **Single Member (SM):** una sola persona como titular. Declaración más simple (formulario 5472). Menor costo de mantenimiento.
+- **Multi Member (MM):** dos o más socios. Requiere presentación del formulario 1065 + K-1. Útil para cuentas compartidas o responsabilidades divididas.
+
+👉 [Agendá tu llamada](https://calendly.com/financers/llamada)
+"""),
+            ("¿La LLC permite recibir pagos internacionales?",
+             """Sí. Con tu LLC podés recibir pagos desde cualquier parte del mundo. Plataformas como Stripe, Wise, Payoneer, Deel, Binance, etc. son compatibles.
+
+También podés emitir facturas a clientes internacionales y operar como proveedor global.
+
+👉 [Agendá tu llamada](https://calendly.com/financers/llamada)
+"""),
+            ("¿Qué costo tiene abrir una LLC?",
+             """Depende del estado y tipo de estructura:
+
+- New Mexico SM: desde USD 700
+- Florida SM: USD 1000 (más RA y Sunbiz)
+- Delaware SM: USD 1300 (más Franchise Tax de USD 300)
+
+Todos incluyen la cuenta bancaria y presentación BOI.
+
+👉 [Agendá tu llamada](https://calendly.com/financers/llamada)
+""")
+        ],
+        "Declaración de impuestos": [
+            ("¿Debo declarar si la LLC no tuvo movimientos?",
+             """Sí. Toda LLC con EIN está obligada a presentar declaración anual.
+
+- SM: formularios 1120 + 5472
+- MM: formulario 1065 + K-1 para cada socio
+
+No declarar puede implicar multas de hasta USD 25.000.
+
+👉 [Agendá tu llamada](https://calendly.com/financers/llamada)
+"""),
+            ("¿Cuál es el costo de la declaración anual?",
+             """- SM: USD 500
+- MM: USD 800
+
+Además, sumá:
+- RA: USD 100
+- Estado: FL (139), DE (300), NM (0), WY (62)
+
+👉 [Agendá tu llamada](https://calendly.com/financers/llamada)
+"""),
+            ("¿Qué es el RA, Sunbiz o Franchise Tax?",
+             """- **RA:** agente registrado (USD 100/año)
+- **Sunbiz:** registro estatal obligatorio en Florida (USD 139)
+- **Franchise Tax:** impuesto anual de Delaware (USD 300)
+
+👉 [Agendá tu llamada](https://calendly.com/financers/llamada)
+"""),
+            ("¿Puedo pagarme un sueldo desde la LLC?",
+             """Si no sos residente fiscal en EE.UU., podés hacer transferencias personales como retiro de utilidades.
+
+Si sos residente o tenés actividad física allá, necesitás registrarte como empleador.
+
+👉 [Agendá tu llamada](https://calendly.com/financers/llamada)
+"""),
+            ("¿Cómo declaro en Argentina los ingresos desde la LLC?",
+             """Se declaran como ingresos de fuente extranjera en el Impuesto a las Ganancias.
+
+También pueden estar alcanzados por Bienes Personales. Consultá con tu contador local.
+
+👉 [Agendá tu llamada](https://calendly.com/financers/llamada)
+""")
+        ],
+        "Cuenta bancaria": [
+            ("¿Qué banco recomiendan?",
+             """Usamos Relay Financial como primera opción:
+
+- 100% online
+- Multiusuario
+- Recibe pagos de Stripe, Wise, Deel, Payoneer
+- No requiere residencia en EE.UU.
+
+👉 [Agendá tu llamada](https://calendly.com/financers/llamada)
+"""),
+            ("¿Puedo abrir una cuenta como extranjero?",
+             """Sí. No necesitás visa ni estar en EE.UU.
+
+Solo necesitás:
+- LLC activa
+- EIN
+- Documentación societaria
+- Pasaporte vigente
+
+👉 [Agendá tu llamada](https://calendly.com/financers/llamada)
+"""),
+            ("¿Qué necesito para abrir la cuenta?",
+             """- LLC registrada
+- EIN emitido
+- Articles of Organization + Operating Agreement
+- Pasaporte
+- Formulario KYC del banco
+
+👉 [Agendá tu llamada](https://calendly.com/financers/llamada)
+"""),
+            ("¿Puedo transferir fondos desde Argentina u otros países?",
+             """Sí. Relay permite recibir transferencias SWIFT desde el exterior y también operar con Wise, Payoneer, etc.
+
+👉 [Agendá tu llamada](https://calendly.com/financers/llamada)
+"""),
+            ("¿Qué pasa si no puedo completar el onboarding?",
+             """Nuestro equipo te ayuda a corregir errores y reintentar. Si Relay no aprueba, usamos Mercury, IFB u otras opciones.
+
+👉 [Agendá tu llamada](https://calendly.com/financers/llamada)
+""")
+        ]
+    }
+
+    seccion = st.selectbox("Seleccioná una categoría", list(categorias.keys()))
+    preguntas = [p[0] for p in categorias[seccion]]
+    seleccion = st.selectbox("Seleccioná una pregunta", preguntas)
+
+    for pregunta, respuesta in categorias[seccion]:
+        if pregunta == seleccion:
+            st.markdown(f"### {pregunta}")
+            st.markdown(respuesta)
+            break
+
+# Nota legal al pie
+st.markdown("---")
+st.markdown("**Importante:** Si no estás más de 183 días en EE.UU., no generás ingresos conectados (ECI) ni ingresos de fuente estadounidense, no debés tributar. Aun así, debés presentar tu declaración anual ante el IRS.")
+st.markdown("**Si tenés inmuebles o empleados en EE.UU.**, deberías tributar y lo recomendable sería una C-Corp (tasa fija del 21%).")
+
 
 
 # Nota legal al pie
