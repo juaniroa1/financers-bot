@@ -276,7 +276,3 @@ st.markdown("**Si tenés inmuebles o empleados en EE.UU.**, deberías tributar y
 
 
 
-# Nota legal al pie
-st.markdown("---")
-st.markdown("**Importante:** Si no estás más de 183 días en EE.UU., no generás ingresos conectados (ECI) ni ingresos de fuente estadounidense, no debés tributar. Aun así, debés presentar tu declaración anual ante el IRS.")
-st.markdown("**Si tenés inmuebles o empleados en EE.UU.**, deberías tributar y lo recomendable sería una C-Corp (tasa fija del 21%).")
