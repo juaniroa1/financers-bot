@@ -5,7 +5,7 @@ st.title("Asesor Virtual - FINANCERS")
 st.markdown("Ayudamos a extranjeros a operar legalmente en EE.UU. con soluciones simples, seguras y claras.")
 st.markdown("Seleccioná el servicio sobre el cual querés recibir información:")
 
-intencion = st.selectbox("¿Cómo podemos ayudarte?", [
+intencion = st.selectbox("¿Qué te interesa hacer?", [
     "", "Abrir una LLC", "Declarar impuestos", "Abrir una cuenta bancaria", "Enviar una consulta personalizada", "¿Quiénes somos?"
 ])
 
@@ -112,45 +112,68 @@ elif intencion == "Enviar una consulta personalizada":
         else:
             st.warning("Por favor completá todos los campos.")
 
+elif intencion == "¿Quiénes somos?":
+    st.subheader("¿Quiénes somos en FINANCERS?")
+    st.markdown(
+        "Somos un equipo contable-financiero offshore en Estados Unidos y Argentina que colabora con inversores, empresas tecnológicas y estudios contables de Latinoamérica.
+
+"
+        "Nos especializamos en ofrecer soluciones para que puedas gestionar tu contabilidad en Estados Unidos de manera segura y confiable, hablando tu mismo idioma y permitiéndote trabajar con tranquilidad."
+    )
+
 elif intencion == "Preguntas frecuentes":
     st.subheader("Preguntas frecuentes")
 
     categorias = {
         "Apertura de LLC": [
             ("¿En qué estado me conviene crear la LLC?",
-             "Depende del objetivo de tu negocio:\n\n- **New Mexico** es ideal si buscás privacidad, bajo costo y no necesitás una imagen corporativa reconocida. No tiene impuestos estatales y es muy usado para e-commerce, servicios o actividades online.\n\n- **Florida** es excelente si vas a invertir en inmuebles, operar con cuentas bancarias locales o necesitás tener presencia en un estado comercialmente activo. Es el más elegido por quienes hacen real estate.\n\n- **Delaware** es el más prestigioso desde el punto de vista legal. Muy recomendado para startups, empresas tecnológicas o si vas a levantar capital o tener inversores.\n\n👉 [Agendá tu llamada](https://calendly.com/financers/llamada) para evaluar cuál te conviene."),
+             "Depende del objetivo de tu negocio:
+
+- **New Mexico** es ideal si buscás privacidad, bajo costo y no necesitás una imagen corporativa reconocida.
+- **Florida** es excelente si vas a invertir en inmuebles, operar con cuentas bancarias locales o necesitás tener presencia en un estado comercialmente activo.
+- **Delaware** es el más prestigioso desde el punto de vista legal. Muy recomendado para startups, empresas tecnológicas o si vas a levantar capital o tener inversores.
+
+👉 [Agendá tu llamada](https://calendly.com/financers/llamada) para evaluar cuál te conviene."),
             ("¿Qué incluye el servicio de apertura?",
-             "Nuestro servicio es integral e incluye:\n\n- Redacción y presentación de los documentos ante el estado (Articles of Organization)\n- Obtención del número de identificación fiscal (EIN) ante el IRS\n- Inscripción del agente registrado (Registered Agent)\n- Envío de Operating Agreement y certificados\n- Asesoría para apertura de cuenta bancaria (Mercury, Relay u otras)\n- Presentación del BOI (reporte de beneficiarios)\n- Asistencia personalizada en español\n\n👉 [Agendá tu llamada](https://calendly.com/financers/llamada) para recibir el detalle según tu país y objetivo."),
-            ("¿Qué significa ser Single Member o Multi Member?",
-             "- **Single Member (SM):** la LLC tiene un solo dueño. Es más simple a nivel impositivo (formulario 5472 + 1120) y el costo de la declaración anual es menor (USD 500).\n\n- **Multi Member (MM):** la LLC tiene más de un socio. Se presenta un formulario 1065 y se entregan formularios K-1 a cada miembro. Costo aproximado: USD 800.\n\nLa estructura MM suele utilizarse si necesitás dividir responsabilidades, operar con socios o tener cuentas mancomunadas.\n\n👉 [Agendá tu llamada](https://calendly.com/financers/llamada) y evaluamos cuál te conviene."),
-            ("¿La LLC permite recibir pagos internacionales?",
-             "Sí. Una LLC en EE.UU. te permite operar con plataformas como Stripe, PayPal, Upwork, Deel, Wise, Binance, Coinbase y recibir pagos en USD.\n\nAdemás, podés emitir facturas desde la empresa para tus clientes en cualquier parte del mundo. Los fondos llegan a tu cuenta bancaria comercial en EE.UU. y desde allí los podés transferir a cualquier parte.\n\n👉 [Agendá tu llamada](https://calendly.com/financers/llamada) y te mostramos cómo operar con Stripe o Deel."),
-            ("¿Qué costo tiene abrir una LLC?",
-             "Depende del estado y tipo de estructura:\n\n- **New Mexico (SM):** desde USD 700\n- **Florida (SM):** USD 1000 + gastos anuales fijos (Sunbiz: 139, RA: 100)\n- **Delaware (SM):** USD 1300 + Franchise Tax: 300\n\nTodos los precios incluyen apertura de cuenta bancaria, presentación BOI y asesoría.\n\n👉 [Agendá tu llamada](https://calendly.com/financers/llamada) y te enviamos el presupuesto exacto según tu necesidad.")
+             "Nuestro servicio incluye:
+- Registro legal
+- EIN ante el IRS
+- Agente registrado
+- Operating Agreement
+- Presentación BOI
+- Asistencia para cuenta bancaria
+
+👉 [Agendá tu llamada](https://calendly.com/financers/llamada)")
         ],
         "Declaración de impuestos": [
             ("¿Debo declarar si la LLC no tuvo movimientos?",
-             "Sí. Si tu LLC tiene EIN, está obligada a presentar declaración anual ante el IRS. No hacerlo puede generar multas importantes (USD 25.000 si sos Single Member).\n\nIncluso si no operaste, es obligatorio presentar el formulario 5472 (SM) o el 1065 + K-1 (MM).\n\n👉 [Agendá tu llamada](https://calendly.com/financers/llamada) para evitar sanciones."),
+             "Sí. Si la LLC tiene EIN, está obligada a presentar declaración anual ante el IRS.
+Incluso sin actividad, presentar 5472 (SM) o 1065+K-1 (MM).
+
+👉 [Agendá tu llamada](https://calendly.com/financers/llamada) para evitar sanciones."),
             ("¿Cuál es el costo de la declaración anual?",
-             "- **LLC Single Member:** USD 500\n- **LLC Multi Member:** USD 800\n\nAdemás:\n- Agente registrado: USD 100/año\n- Impuesto estatal:\n  - New Mexico: 0\n  - Florida: 139\n  - Delaware: 300 (Franchise Tax)\n\n👉 [Agendá tu llamada](https://calendly.com/financers/llamada) y te hacemos un presupuesto final."),
-            ("¿Qué es el RA, Sunbiz o Franchise Tax?",
-             "- **RA (Registered Agent):** es obligatorio y sirve como domicilio legal. USD 100/año.\n- **Sunbiz:** es el portal del estado de Florida donde renovás la existencia de la LLC. USD 139/año.\n- **Franchise Tax:** es el impuesto fijo anual que cobra Delaware. USD 300.\n\n👉 [Agendá tu llamada](https://calendly.com/financers/llamada) si querés automatizar tus vencimientos."),
-            ("¿Puedo pagarme un sueldo desde la LLC?",
-             "Sí, pero depende de si sos residente fiscal o no:\n- Si **no** lo sos: podés transferirte dinero como **distribución de utilidades**, sin tributar en EE.UU.\n- Si **lo sos**: deberías registrarte como empleador y pagar impuestos laborales.\n\n👉 [Agendá tu llamada](https://calendly.com/financers/llamada) y analizamos tu caso fiscal."),
-            ("¿Cómo declaro en Argentina los ingresos desde la LLC?",
-             "Debés declarar en el Impuesto a las Ganancias como \"renta de fuente extranjera\".\n\nAdemás, si tenés participación societaria o cuentas bancarias en el exterior, podrían entrar en Bienes Personales. Recomendamos trabajar con un contador local que esté familiarizado con estructuras offshore.\n\n👉 [Agendá tu llamada](https://calendly.com/financers/llamada) y te derivamos a un contador especialista.")
+             "- SM: USD 500
+- MM: USD 800
+- RA: USD 100
+- Impuesto estatal: Florida 139, Delaware 300, NM 0
+
+👉 [Agendá tu llamada](https://calendly.com/financers/llamada)")
         ],
         "Cuenta bancaria": [
             ("¿Qué banco recomiendan?",
-             "Usamos **Relay Financial** como primera opción:\n- 100% online\n- Multiusuario\n- Integración con QuickBooks y herramientas contables\n- Permite recibir transferencias internacionales y pagos de Stripe o PayPal\n\n👉 [Agendá tu llamada](https://calendly.com/financers/llamada) y te mostramos cómo abrirla."),
-            ("¿Puedo abrir una cuenta como extranjero?",
-             "Sí. No necesitás visa ni residencia. Solo necesitás:\n- Tu LLC activa\n- EIN\n- Pasaporte vigente\n- Operating Agreement y Articles of Organization\n\n👉 [Agendá tu llamada](https://calendly.com/financers/llamada) y te acompañamos en el proceso."),
+             "Recomendamos **Relay Financial**:
+- Online
+- Multiusuario
+- Compatible con Stripe y Wise
+
+👉 [Agendá tu llamada](https://calendly.com/financers/llamada) para ver si aplica a tu caso."),
             ("¿Qué necesito para abrir la cuenta?",
-             "- LLC ya constituida\n- EIN aprobado\n- Documentos legales (certificados y acuerdos)\n- Pasaporte\n- Completar formulario online (KYC)\n\n👉 [Agendá tu llamada](https://calendly.com/financers/llamada) y te enviamos un ejemplo del formulario."),
-            ("¿Puedo transferir fondos desde Argentina u otros países?",
-             "Sí. La cuenta de Relay o Mercury permite recibir transferencias SWIFT desde cualquier país. También podés fondearla con Payoneer, Wise, Stripe u otros métodos.\n\n👉 [Agendá tu llamada](https://calendly.com/financers/llamada) si querés verificar si tu banco es compatible."),
-            ("¿Qué pasa si no puedo completar el onboarding?",
-             "Nuestro equipo te asesora para corregir errores. Si Relay rechaza la solicitud, intentamos con Mercury o IFB/OceanBank.\n\n👉 [Agendá tu llamada](https://calendly.com/financers/llamada) y resolvemos juntos el onboarding.")
+             "- LLC activa
+- EIN
+- Operating Agreement
+- Pasaporte
+
+👉 [Agendá tu llamada](https://calendly.com/financers/llamada)")
         ]
     }
 
@@ -163,16 +186,11 @@ elif intencion == "Preguntas frecuentes":
             st.markdown(f"### {pregunta}")
             st.markdown(respuesta)
             break
-
-
-elif intencion == "¿Quiénes somos?":
     st.subheader("¿Quiénes somos en FINANCERS?")
     st.markdown(
         "Somos un equipo contable-financiero offshore en Estados Unidos y Argentina que colabora con inversores, empresas tecnológicas y estudios contables de Latinoamérica.\n\n"
         "Nos especializamos en ofrecer soluciones para que puedas gestionar tu contabilidad en Estados Unidos de manera segura y confiable, hablando tu mismo idioma y permitiéndote trabajar con tranquilidad."
     )
-
-
 
 # Nota legal al pie
 st.markdown("---")
