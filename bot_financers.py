@@ -173,6 +173,34 @@ Todos incluyen la cuenta bancaria y presentación BOI.
 👉 [Agendá tu llamada](https://calendly.com/financers/llamada)
 """)
         ],
+        "Estate Tax y estructuras offshore": [
+            ("¿Qué es el Estate Tax y cuándo aplica?",
+             """El Estate Tax es un impuesto a la herencia que puede alcanzar hasta el 40% sobre el valor de los activos que un extranjero posea directamente en EE.UU., como propiedades a nombre de una LLC. Si el titular fallece sin una estructura que lo proteja, sus herederos podrían enfrentar esta carga fiscal. Para evitarlo, se recomienda crear una sociedad offshore (como una BVI) que sea la propietaria de la LLC.
+
+👉 [Agendá tu llamada](https://calendly.com/financers/llamada)
+"""),
+            ("¿Qué tipo de offshore recomiendan?",
+             """La estructura más utilizada por nuestros clientes es una sociedad en las Islas Vírgenes Británicas (BVI). Esta entidad es confidencial, ágil de constituir, y permite que vos seas el beneficiario final sin figurar directamente en EE.UU. Es ideal para propietarios de inmuebles o cuentas bancarias que quieren reducir riesgos legales y fiscales.
+
+👉 [Agendá tu llamada](https://calendly.com/financers/llamada)
+"""),
+            ("¿Puedo usar una offshore para proteger activos?",
+             """Sí. Muchas veces se crea una BVI como holding que controla la LLC estadounidense. Esto no sólo evita el Estate Tax, sino que brinda una capa adicional de privacidad y planificación fiscal. Es legal, transparente, y muy común en estructuras de no residentes.
+
+👉 [Agendá tu llamada](https://calendly.com/financers/llamada)
+"""),
+            ("¿Es obligatorio usar offshore si tengo propiedades?",
+             """No es obligatorio, pero sí altamente recomendable si el valor de los activos supera los USD 60.000. Por encima de ese umbral, el IRS podría aplicar el Estate Tax. Si querés evitar riesgos a largo plazo, es mejor prevenir con una estructura adecuada.
+
+👉 [Agendá tu llamada](https://calendly.com/financers/llamada)
+"""),
+            ("¿La offshore paga impuestos?",
+             """No. Una sociedad offshore como BVI no paga impuestos en su país de incorporación ni en EE.UU. si no opera directamente allí. Su función es de control y tenencia, no de operación directa.
+
+👉 [Agendá tu llamada](https://calendly.com/financers/llamada)
+""")
+        ],
+        
         "Declaración de impuestos": [
             ("¿Debo declarar si la LLC no tuvo movimientos?",
              """Sí. Toda LLC con EIN está obligada a presentar declaración anual.
