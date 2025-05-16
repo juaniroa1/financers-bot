@@ -118,6 +118,7 @@ elif intencion == "¿Quiénes somos?":
         "Somos un equipo contable-financiero offshore en Estados Unidos y Argentina que colabora con inversores, empresas tecnológicas y estudios contables de Latinoamérica.\n\n"
         "Nos especializamos en ofrecer soluciones para que puedas gestionar tu contabilidad en Estados Unidos de manera segura y confiable, hablando tu mismo idioma y permitiéndote trabajar con tranquilidad."
     )
+
 elif intencion == "Preguntas frecuentes":
     st.subheader("Preguntas frecuentes")
 
@@ -145,7 +146,31 @@ elif intencion == "Preguntas frecuentes":
 
 👉 [Agendá tu llamada](https://calendly.com/financers/llamada)
 """),
+            ("¿Qué significa ser Single Member o Multi Member?",
+             """- **Single Member (SM):** una sola persona como titular. Declaración más simple (formulario 5472). Menor costo de mantenimiento.
+- **Multi Member (MM):** dos o más socios. Requiere presentación del formulario 1065 + K-1. Útil para cuentas compartidas o responsabilidades divididas.
 
+👉 [Agendá tu llamada](https://calendly.com/financers/llamada)
+"""),
+            ("¿La LLC permite recibir pagos internacionales?",
+             """Sí. Con tu LLC podés recibir pagos desde cualquier parte del mundo. Plataformas como Stripe, Wise, Payoneer, Deel, Binance, etc. son compatibles.
+
+También podés emitir facturas a clientes internacionales y operar como proveedor global.
+
+👉 [Agendá tu llamada](https://calendly.com/financers/llamada)
+"""),
+            ("¿Qué costo tiene abrir una LLC?",
+             """Depende del estado y tipo de estructura:
+
+- New Mexico SM: desde USD 700
+- Florida SM: USD 1000 (más RA y Sunbiz)
+- Delaware SM: USD 1300 (más Franchise Tax de USD 300)
+
+Todos incluyen la cuenta bancaria y presentación BOI.
+
+👉 [Agendá tu llamada](https://calendly.com/financers/llamada)
+""")
+        ]
 
 # Nota legal al pie
 st.markdown("---")
