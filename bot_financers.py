@@ -5,6 +5,14 @@ st.title("Asesor Virtual - FINANCERS")
 st.markdown("Ayudamos a extranjeros a operar legalmente en EE.UU. con soluciones simples, seguras y claras.")
 st.markdown("Seleccioná el servicio sobre el cual querés recibir información:")
 
+if intencion == "¿Quiénes somos?":
+    st.subheader("¿Quiénes somos en FINANCERS?")
+    st.markdown("""
+Somos un equipo contable-financiero offshore en Estados Unidos y Argentina que colabora con inversores, empresas tecnológicas y estudios contables de Latinoamérica.
+
+Nos especializamos en ofrecer soluciones para que puedas gestionar tu contabilidad en Estados Unidos de manera segura y confiable, hablando tu mismo idioma y permitiéndote trabajar con tranquilidad.
+""")
+
 intencion = st.selectbox("¿Cómo podemos ayudarte?", [
     "", "Abrir una LLC", "Declarar impuestos", "Abrir una cuenta bancaria", "Enviar una consulta personalizada", "¿Quiénes somos?", "Preguntas frecuentes"
 ])
@@ -111,14 +119,6 @@ elif intencion == "Enviar una consulta personalizada":
             st.markdown(f"**Resumen:**\n\nNombre: {nombre}\nContacto: {contacto}\nConsulta: {consulta}")
         else:
             st.warning("Por favor completá todos los campos.")
-
-if intencion == "¿Quiénes somos?":
-    st.subheader("¿Quiénes somos en FINANCERS?")
-    st.markdown("""
-Somos un equipo contable-financiero offshore en Estados Unidos y Argentina que colabora con inversores, empresas tecnológicas y estudios contables de Latinoamérica.
-
-Nos especializamos en ofrecer soluciones para que puedas gestionar tu contabilidad en Estados Unidos de manera segura y confiable, hablando tu mismo idioma y permitiéndote trabajar con tranquilidad.
-""")
 
 elif intencion == "Preguntas frecuentes":
     st.subheader("Preguntas frecuentes")
