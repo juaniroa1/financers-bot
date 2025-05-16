@@ -118,7 +118,33 @@ elif intencion == "¿Quiénes somos?":
         "Somos un equipo contable-financiero offshore en Estados Unidos y Argentina que colabora con inversores, empresas tecnológicas y estudios contables de Latinoamérica.\n\n"
         "Nos especializamos en ofrecer soluciones para que puedas gestionar tu contabilidad en Estados Unidos de manera segura y confiable, hablando tu mismo idioma y permitiéndote trabajar con tranquilidad."
     )
+elif intencion == "Preguntas frecuentes":
+    st.subheader("Preguntas frecuentes")
 
+    categorias = {
+        "Apertura de LLC": [
+            ("¿En qué estado me conviene crear la LLC?",
+             """Depende del objetivo de tu negocio:
+
+- **New Mexico** es ideal si buscás privacidad, bajo costo y no necesitás una imagen corporativa reconocida.
+- **Florida** es excelente si vas a invertir en inmuebles, operar con cuentas bancarias locales o necesitás tener presencia en un estado comercialmente activo.
+- **Delaware** es el más prestigioso desde el punto de vista legal. Muy recomendado para startups, empresas tecnológicas o si vas a levantar capital o tener inversores.
+
+👉 [Agendá tu llamada](https://calendly.com/financers/llamada)
+"""),
+            ("¿Qué incluye el servicio de apertura?",
+             """Nuestro servicio incluye:
+
+- Registro legal de la LLC ante el estado correspondiente
+- Obtención del EIN (número de identificación fiscal) ante el IRS
+- Alta del agente registrado (Registered Agent)
+- Operating Agreement
+- Presentación del BOI (Beneficial Ownership Information)
+- Asistencia para apertura de cuenta bancaria
+- Asesoría en español durante todo el proceso
+
+👉 [Agendá tu llamada](https://calendly.com/financers/llamada)
+"""),
 
 
 # Nota legal al pie
