@@ -6,7 +6,7 @@ st.markdown("Ayudamos a extranjeros a operar legalmente en EE.UU. con soluciones
 st.markdown("Seleccioná el servicio sobre el cual querés recibir información:")
 
 intencion = st.selectbox("¿Cómo podemos ayudarte?", [
-    "", "Abrir una LLC", "Declarar impuestos", "Abrir una cuenta bancaria", "Enviar una consulta personalizada", "¿Quiénes somos?", "Preguntas frecuentes"
+    "", "Abrir una LLC", "Declarar impuestos", "Abrir una cuenta bancaria", "Enviar una consulta personalizada", "¿Quiénes somos?", "Preguntas frecuentes", "No sé por dónde empezar"
 ])
 
 estado = tipo = None
@@ -32,6 +32,8 @@ Somos un equipo contable-financiero offshore en Estados Unidos y Argentina que c
 
 Nos especializamos en ofrecer soluciones para que puedas gestionar tu contabilidad en Estados Unidos de manera segura y confiable, hablando tu mismo idioma y permitiéndote trabajar con tranquilidad.
 """)
+
+
 
 
 if intencion == "Abrir una LLC":
@@ -120,6 +122,35 @@ elif intencion == "Enviar una consulta personalizada":
             st.markdown(f"**Resumen:**\n\nNombre: {nombre}\nContacto: {contacto}\nConsulta: {consulta}")
         else:
             st.warning("Por favor completá todos los campos.")
+
+elif intencion == "No sé por dónde empezar":
+    st.subheader("¡Empecemos por lo básico!")
+
+    opciones = {
+        "Quiero más información o no sé bien qué necesito": """Hola, buen día.
+Soy Juan Cruz de FINANCERS, un gusto.
+
+Te cuento: ayudamos a emprendedores e inversores latinos a operar legalmente en EE.UU.
+
+¿Tenés pensado abrir una empresa, declarar impuestos o necesitás ayuda con una cuenta bancaria?
+Con una mínima info ya te puedo orientar.""",
+
+        "Vi algo sobre crear una empresa": """Genial.
+¿Tenés pensado armarla solo o con socios? Eso define si sería una LLC Single Member o Multi Member.
+
+Y si ya sabés en qué estado te interesa (New Mexico, Florida, Delaware), te paso el presupuesto detallado y ventajas de cada uno.""",
+
+        "Estoy en otro país, ¿puedo abrir una cuenta o empresa?": """Sí, sin problema. No necesitás vivir en EE.UU.
+
+Te ayudamos a abrir una empresa 100% online desde tu país, obtener el EIN, y abrir la cuenta bancaria con bancos como Mercury o Relay.
+
+¿Querés que te pase los requisitos y el presupuesto estimado?"""
+    }
+
+    seleccion = st.selectbox("Elegí una pregunta inicial", list(opciones.keys()))
+    st.markdown("### Respuesta sugerida")
+    st.markdown(opciones[seleccion])
+
 
 elif intencion == "Preguntas frecuentes":
     st.subheader("Preguntas frecuentes")
