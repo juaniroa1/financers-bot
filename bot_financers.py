@@ -127,18 +127,6 @@ st.markdown("""
 """)
 
 
-elif intencion == "Abrir una cuenta bancaria":
-    tiene_llc = st.radio("¿Ya tenés una LLC formada con EIN?", ["Sí", "No"])
-    if tiene_llc == "No":
-        st.warning("Para abrir una cuenta bancaria necesitás una LLC registrada y el EIN. Podemos ayudarte con eso.")
-    else:
-        st.markdown("Podemos ayudarte a abrir cuentas en:")
-        st.markdown("- **Mercury:** 100% online, sin presencialidad")
-        st.markdown("- **Relay:** multiusuario, ideal para equipos")
-        st.markdown("- **OceanBank o IFB:** desde USD 10.000 a 25.000 de depósito mínimo – Costo de apertura: USD 1500")
-        st.markdown("### Resultado")
-        st.markdown(respuestas["cuenta_sin_llc"])
-
 elif intencion == "Enviar una consulta personalizada":
     st.subheader("Dejanos tu consulta y te contactamos personalmente")
     nombre = st.text_input("Nombre completo")
