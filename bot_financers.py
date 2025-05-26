@@ -98,6 +98,59 @@ elif intencion == "Declarar impuestos":
     else:
         st.warning("Para declarar impuestos primero debés tener una LLC. Podemos ayudarte con la apertura.")
 
+elif intencion == "Servicios contables":
+    st.subheader("Servicios contables adicionales que ofrecemos")
+    st.markdown("""
+- Certificación de balances y estados contables para bancos o visas  
+- Presentación del BOI ante FinCEN (obligatorio desde 2024)  
+- Correcciones de errores en declaraciones pasadas  
+- Soporte en casos con herencias, ITIN, o estructura previa
+""")
+    st.markdown("👉 [Agendá tu llamada](https://calendly.com/financers/llamada)")
+
+st.markdown("### ¿Usás la LLC para propiedades o real estate?")
+st.markdown("""
+- Si comprás propiedades en EE.UU. a nombre de la LLC, podrías quedar expuesto al impuesto a la herencia (Estate Tax).
+- La solución ideal es que una sociedad offshore (como una BVI) sea la dueña de la LLC.
+- Así, se evita que los activos queden registrados a tu nombre personal ante el IRS.
+
+👉 Artículo recomendado: [Estructura para evitar Estate Tax](https://www.financers.com.ar/estructura-en-bvi-para-evitar-el-estate-inheritance-tax-en-usa/)
+""")
+
+st.markdown("### ¿Usás la LLC para propiedades o real estate?")
+st.markdown("""
+- Si comprás propiedades en EE.UU. a nombre de la LLC, podrías quedar expuesto al impuesto a la herencia (Estate Tax).
+- La solución ideal es que una sociedad offshore (como una BVI) sea la dueña de la LLC.
+- Así, se evita que los activos queden registrados a tu nombre personal ante el IRS.
+
+👉 Artículo recomendado: [Estructura para evitar Estate Tax](https://www.financers.com.ar/estructura-en-bvi-para-evitar-el-estate-inheritance-tax-en-usa/)
+""")
+
+elif intencion == "Solo necesito ayuda bancaria":
+    st.subheader("¡Perfecto! Si ya tenés tu LLC + EIN, podemos ayudarte con la cuenta")
+    st.markdown("""
+Trabajamos con:
+
+- **Relay Financial** (cuenta en USD, sin presencialidad, tarjetas físicas y virtuales)
+- **Mercury Bank**
+- Bancos físicos como OceanBank o International Finance Bank (depósito mínimo requerido)
+
+👉 [Agendá tu llamada y lo resolvemos](https://calendly.com/financers/llamada)
+""")
+
+
+elif intencion == "Ya tengo la LLC pero necesito ayuda":
+    st.subheader("Podemos ayudarte a regularizar o completar tu estructura")
+    st.markdown("""
+- Revisión gratuita de tu estructura actual  
+- Declaración anual ante IRS  
+- BOI obligatorio ante FinCEN  
+- Asistencia para cuentas bancarias y cumplimiento
+
+👉 [Agendá tu llamada](https://calendly.com/financers/llamada)
+""")
+
+
 elif intencion == "Abrir una cuenta bancaria":
     tiene_llc = st.radio("¿Ya tenés una LLC formada con EIN?", ["Sí", "No"])
     if tiene_llc == "No":
