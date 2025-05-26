@@ -99,19 +99,30 @@ if intencion == "Abrir una LLC":
         if estado and tipo:
             key = f"llc_{estado.lower().replace(' ', '_')}_{tipo.lower().split()[0]}"
 
-            if key == "llc_florida_single":
-                with st.chat_message("assistant"):
-                    st.markdown("Buenísimo, entonces podríamos avanzar con una LLC Single Member en Florida. Es una de las opciones más elegidas, sobre todo si vas a abrir cuenta bancaria o invertir en inmuebles.")
-                with st.chat_message("assistant"):
-                    st.markdown("El costo total estimado es de **USD 739**, e incluye la formación legal, EIN, agente registrado y acompañamiento completo para la cuenta bancaria.")
-                with st.chat_message("assistant"):
-                    st.markdown("Si tu idea es usar la estructura para comprar propiedades en EE.UU., tené en cuenta que puede aplicar el **Estate Tax** (impuesto a la herencia de hasta 40%). En ese caso, conviene evaluar una estructura offshore como dueña de la LLC.")
-                with st.chat_message("assistant"):
-                    st.markdown("📄 **PDF sugerido:** Presupuesto SM – Florida.pdf")
-                with st.chat_message("assistant"):
-                    st.markdown("¿Querés que coordinemos una llamada y te explico cómo iniciar el proceso o resolver tus dudas?")
+            if key == \"llc_florida_single\":
+    st.markdown("### Resultado estándar")
+    st.markdown("- Costo total estimado: USD 739
+- Ideal para inversiones inmobiliarias y apertura de cuenta bancaria
+- Buena reputación legal y reconocimiento internacional
+- Atención: puede aplicar Estate Tax (hasta 40%) si no se usa una estructura offshore
 
-            elif key == "llc_new_mexico_single":
+**PDF sugerido:** Presupuesto SM – Florida.pdf
+**Agendá tu llamada:** https://calendly.com/financers/llamada")
+
+    st.markdown("---")
+    st.markdown("### Simulación estilo chat")
+    with st.chat_message("assistant"):
+        st.markdown("Buenísimo, entonces podríamos avanzar con una LLC Single Member en Florida. Es una de las opciones más elegidas, sobre todo si vas a abrir cuenta bancaria o invertir en inmuebles.")
+    with st.chat_message("assistant"):
+        st.markdown("El costo total estimado es de **USD 739**, e incluye la formación legal, EIN, agente registrado y acompañamiento completo para la cuenta bancaria.")
+    with st.chat_message("assistant"):
+        st.markdown("Si tu idea es usar la estructura para comprar propiedades en EE.UU., tené en cuenta que puede aplicar el **Estate Tax** (impuesto a la herencia de hasta 40%). En ese caso, conviene evaluar una estructura offshore como dueña de la LLC.")
+    with st.chat_message("assistant"):
+        st.markdown("📄 **PDF sugerido:** Presupuesto SM – Florida.pdf")
+    with st.chat_message("assistant"):
+        st.markdown("¿Querés que coordinemos una llamada y te explico cómo iniciar el proceso o resolver tus dudas?")
+
+elif key == "llc_new_mexico_single":
                 with st.chat_message("assistant"):
                     st.markdown("New Mexico es ideal si buscás privacidad, simplicidad y bajo costo. No exige publicación de miembros y tiene cero impuestos estatales.")
                 with st.chat_message("assistant"):
