@@ -6,7 +6,7 @@ st.markdown("Ayudamos a extranjeros a operar legalmente en EE.UU. con soluciones
 st.markdown("Seleccioná el servicio sobre el cual querés recibir información:")
 
 intencion = st.selectbox("¿Cómo podemos ayudarte?", [
-    "", "Abrir una LLC", "Declarar impuestos", "Abrir una cuenta bancaria", "Enviar una consulta personalizada", "¿Quiénes somos?", "Preguntas frecuentes", "No sé por dónde empezar"
+    "", "Abrir una LLC", "Declarar impuestos", "Abrir una cuenta bancaria", "Enviar una consulta personalizada", "¿Quiénes somos?", "Preguntas frecuentes", "No sé por dónde empezar","Simular conversación (caso real)"
 ])
 
 estado = tipo = None
@@ -24,6 +24,34 @@ respuestas = {
     "impuestos_multi": "- Formulario 1065 obligatorio\n- Cada socio debe recibir un K-1\n- W-8BEN-E si los socios son extranjeros\n- Multa por no presentar: USD 210 por socio por mes\n**Agendá tu llamada:** https://calendly.com/financers/llamada",
     "cuenta_sin_llc": "- Requiere LLC + EIN\n- Podemos ayudarte a abrir cuenta en Mercury, Relay o bancos físicos\n- Si no tenés estructura, sugerimos abrir primero una LLC\n**Agendá tu llamada:** https://calendly.com/financers/llamada"
 }
+
+
+
+# Opción para ver conversación simulada
+if intencion == "Simular conversación (caso real)":
+    caso = st.selectbox("Elegí una situación", [
+        "LLC en Florida - SM - Real Estate"
+    ])
+
+    if caso == "LLC en Florida - SM - Real Estate":
+        simular_conversacion_llc_florida_sm_real_estate()
+
+# Conversación simulada: Florida - SM - Real Estate
+def simular_conversacion_llc_florida_sm_real_estate():
+    st.subheader("Simulación de conversación: Florida - Single Member - Real Estate")
+
+    st.chat_message("user").markdown("Hola, estoy pensando en abrir una LLC. Estuve viendo opciones como Florida.")
+    st.chat_message("assistant").markdown("Hola, un gusto. Florida es excelente, sobre todo si vas a operar con cuentas bancarias o invertir en inmuebles. ¿La manejarías solo o con alguien más?")
+    st.chat_message("user").markdown("Solo yo.")
+    st.chat_message("assistant").markdown("Entonces sería una LLC Single Member. El costo total estimado es **USD 739** e incluye formación, EIN, agente registrado y ayuda bancaria.")
+    st.chat_message("assistant").markdown("¿Vas a usarla para vender servicios, tener cuentas o adquirir una propiedad?")
+    st.chat_message("user").markdown("Para comprar un inmueble.")
+    st.chat_message("assistant").markdown("Perfecto. Puede aplicar el **Estate Tax** (hasta 40%) si el inmueble queda a nombre de la LLC. Lo recomendable es que una sociedad offshore sea la dueña de la LLC para evitar eso.")
+    st.chat_message("assistant").markdown("📄 *Presupuesto SM – Florida.pdf*\n👉 https://calendly.com/financers/llamada")
+
+
+
+
 
 if intencion == "¿Quiénes somos?":
     st.subheader("¿Quiénes somos en FINANCERS?")
