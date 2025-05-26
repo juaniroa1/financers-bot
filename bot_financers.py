@@ -127,19 +127,6 @@ st.markdown("""
 """)
 
 
-elif intencion == "Enviar una consulta personalizada":
-    st.subheader("Dejanos tu consulta y te contactamos personalmente")
-    nombre = st.text_input("Nombre completo")
-    contacto = st.text_input("Correo electrónico o WhatsApp")
-    consulta = st.text_area("Escribí tu consulta")
-
-    if st.button("Enviar consulta"):
-        if nombre and contacto and consulta:
-            st.success("Gracias. Nuestro equipo se pondrá en contacto en breve.")
-            st.markdown(f"**Resumen:**\n\nNombre: {nombre}\nContacto: {contacto}\nConsulta: {consulta}")
-        else:
-            st.warning("Por favor completá todos los campos.")
-
 elif intencion == "No sé por dónde empezar":
     st.subheader("¡Empecemos por lo básico!")
 
