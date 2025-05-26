@@ -126,17 +126,6 @@ st.markdown("""
 👉 Artículo recomendado: [Estructura para evitar Estate Tax](https://www.financers.com.ar/estructura-en-bvi-para-evitar-el-estate-inheritance-tax-en-usa/)
 """)
 
-elif intencion == "Solo necesito ayuda bancaria":
-    st.subheader("¡Perfecto! Si ya tenés tu LLC + EIN, podemos ayudarte con la cuenta")
-    st.markdown("""
-Trabajamos con:
-
-- **Relay Financial** (cuenta en USD, sin presencialidad, tarjetas físicas y virtuales)
-- **Mercury Bank**
-- Bancos físicos como OceanBank o International Finance Bank (depósito mínimo requerido)
-
-👉 [Agendá tu llamada y lo resolvemos](https://calendly.com/financers/llamada)
-""")
 
 
 elif intencion == "Ya tengo la LLC pero necesito ayuda":
