@@ -127,19 +127,6 @@ st.markdown("""
 """)
 
 
-
-elif intencion == "Ya tengo la LLC pero necesito ayuda":
-    st.subheader("Podemos ayudarte a regularizar o completar tu estructura")
-    st.markdown("""
-- Revisión gratuita de tu estructura actual  
-- Declaración anual ante IRS  
-- BOI obligatorio ante FinCEN  
-- Asistencia para cuentas bancarias y cumplimiento
-
-👉 [Agendá tu llamada](https://calendly.com/financers/llamada)
-""")
-
-
 elif intencion == "Abrir una cuenta bancaria":
     tiene_llc = st.radio("¿Ya tenés una LLC formada con EIN?", ["Sí", "No"])
     if tiene_llc == "No":
