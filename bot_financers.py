@@ -6,7 +6,9 @@ st.markdown("Ayudamos a extranjeros a operar legalmente en EE.UU. con soluciones
 st.markdown("Seleccioná el servicio sobre el cual querés recibir información:")
 
 intencion = st.selectbox("¿Cómo podemos ayudarte?", [
-    "", "Abrir una LLC", "Declarar impuestos", "Abrir una cuenta bancaria", "Enviar una consulta personalizada", "¿Quiénes somos?", "Preguntas frecuentes", "No sé por dónde empezar"
+    "", "Abrir una LLC", "Declarar impuestos", "Abrir una cuenta bancaria", "Enviar una consulta personalizada", 
+    "¿Quiénes somos?", "Preguntas frecuentes", "No sé por dónde empezar", "Servicios contables", 
+    "Inversiones o soporte internacional", "Ya tengo la LLC pero necesito ayuda", "Solo necesito ayuda bancaria"
 ])
 
 estado = tipo = None
@@ -33,8 +35,49 @@ Somos un equipo contable-financiero offshore en Estados Unidos y Argentina que c
 Nos especializamos en ofrecer soluciones para que puedas gestionar tu contabilidad en Estados Unidos de manera segura y confiable, hablando tu mismo idioma y permitiéndote trabajar con tranquilidad.
 """)
 
+elif intencion == "Servicios contables":
+    st.subheader("Servicios contables adicionales que ofrecemos")
+    st.markdown("""
+- Certificación de balances y estados contables para bancos o visas  
+- Presentación del BOI ante FinCEN (obligatorio desde 2024)  
+- Correcciones de errores en declaraciones pasadas  
+- Soporte en casos con herencias, ITIN o estructura previa
 
+👉 [Agendá tu llamada](https://calendly.com/financers/llamada)
+""")
 
+elif intencion == "Inversiones o soporte internacional":
+    st.subheader("¿Querés usar la LLC para justificar ingresos o invertir?")
+    st.markdown("""
+- Emitimos balances certificados para trámites migratorios o bancarios  
+- Podés operar con brokers como IBKR, Binance, eToro, etc.  
+- Te ayudamos a justificar origen de fondos ante bancos internacionales  
+
+👉 [Agendá tu llamada](https://calendly.com/financers/llamada)
+""")
+
+elif intencion == "Ya tengo la LLC pero necesito ayuda":
+    st.subheader("Podemos ayudarte a regularizar o completar tu estructura")
+    st.markdown("""
+- Revisión gratuita de tu estructura actual  
+- Declaración anual ante IRS  
+- BOI obligatorio ante FinCEN  
+- Asistencia para cuentas bancarias y cumplimiento
+
+👉 [Agendá tu llamada](https://calendly.com/financers/llamada)
+""")
+
+elif intencion == "Solo necesito ayuda bancaria":
+    st.subheader("¡Perfecto! Si ya tenés tu LLC + EIN, podemos ayudarte con la cuenta")
+    st.markdown("""
+Trabajamos con:
+
+- **Relay Financial** (cuenta en USD, sin presencialidad, tarjetas físicas y virtuales)
+- **Mercury Bank**
+- Bancos físicos como OceanBank o IFB (depósito mínimo requerido)
+
+👉 [Agendá tu llamada y lo resolvemos](https://calendly.com/financers/llamada)
+""")
 
 if intencion == "Abrir una LLC":
     conocimiento = st.radio("¿Tenés conocimiento previo sobre las LLC en EE.UU.?", ["Sí", "No"])
