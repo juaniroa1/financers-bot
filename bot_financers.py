@@ -58,6 +58,7 @@ if intencion == "Abrir una LLC":
             if key in respuestas:
                 st.markdown("### Resultado")
                 st.markdown(respuestas[key])
+            
 
 elif intencion == "Declarar impuestos":
     tiene_llc = st.radio("¿Ya tenés una LLC formada?", ["Sí", "No"])
