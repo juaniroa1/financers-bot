@@ -58,6 +58,18 @@ if intencion == "Abrir una LLC":
             if key in respuestas:
                 st.markdown("### Resultado")
                 st.markdown(respuestas[key])
+    st.markdown("---")
+    st.markdown("### Simulación estilo chat")
+    with st.chat_message("assistant"):
+        st.markdown("Buenísimo, entonces podríamos avanzar con una LLC Single Member en Florida. Es una de las opciones más elegidas, sobre todo si vas a abrir cuenta bancaria o invertir en inmuebles.")
+    with st.chat_message("assistant"):
+        st.markdown("El costo total estimado es de **USD 739**, e incluye la formación legal, EIN, agente registrado y acompañamiento completo para la cuenta bancaria.")
+    with st.chat_message("assistant"):
+        st.markdown("Si tu idea es usar la estructura para comprar propiedades en EE.UU., tené en cuenta que puede aplicar el **Estate Tax** (impuesto a la herencia de hasta 40%). En ese caso, conviene evaluar una estructura offshore como dueña de la LLC.")
+    with st.chat_message("assistant"):
+        st.markdown("📄 **PDF sugerido:** Presupuesto SM – Florida.pdf")
+    with st.chat_message("assistant"):
+        st.markdown("¿Querés que coordinemos una llamada y te explico cómo iniciar el proceso o resolver tus dudas?")
             
 
 elif intencion == "Declarar impuestos":
