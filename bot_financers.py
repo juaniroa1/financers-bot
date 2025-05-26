@@ -98,9 +98,44 @@ if intencion == "Abrir una LLC":
 
         if estado and tipo:
             key = f"llc_{estado.lower().replace(' ', '_')}_{tipo.lower().split()[0]}"
-            if key in respuestas:
-                st.markdown("### Resultado")
-                st.markdown(respuestas[key])
+
+            if key == "llc_florida_single":
+                with st.chat_message("assistant"):
+                    st.markdown("Buenísimo, entonces podríamos avanzar con una LLC Single Member en Florida. Es una de las opciones más elegidas, sobre todo si vas a abrir cuenta bancaria o invertir en inmuebles.")
+                with st.chat_message("assistant"):
+                    st.markdown("El costo total estimado es de **USD 739**, e incluye la formación legal, EIN, agente registrado y acompañamiento completo para la cuenta bancaria.")
+                with st.chat_message("assistant"):
+                    st.markdown("Si tu idea es usar la estructura para comprar propiedades en EE.UU., tené en cuenta que puede aplicar el **Estate Tax** (impuesto a la herencia de hasta 40%). En ese caso, conviene evaluar una estructura offshore como dueña de la LLC.")
+                with st.chat_message("assistant"):
+                    st.markdown("📄 **PDF sugerido:** Presupuesto SM – Florida.pdf")
+                with st.chat_message("assistant"):
+                    st.markdown("¿Querés que coordinemos una llamada y te explico cómo iniciar el proceso o resolver tus dudas?")
+
+            elif key == "llc_new_mexico_single":
+                with st.chat_message("assistant"):
+                    st.markdown("New Mexico es ideal si buscás privacidad, simplicidad y bajo costo. No exige publicación de miembros y tiene cero impuestos estatales.")
+                with st.chat_message("assistant"):
+                    st.markdown("El costo estimado es de **USD 589**, e incluye todo lo necesario para operar: formación legal, EIN, agente, y guía para abrir cuenta bancaria.")
+                with st.chat_message("assistant"):
+                    st.markdown("Esta estructura es muy elegida por freelancers, consultores o quienes hacen facturación digital internacional.")
+                with st.chat_message("assistant"):
+                    st.markdown("📄 **Presupuesto SM – New Mexico.pdf")
+                with st.chat_message("assistant"):
+                    st.markdown("Si querés, podemos agendar una llamada sin compromiso para ver si se adapta a tu caso o comparar con otras opciones.")
+
+            elif key == "llc_florida_multi":
+                with st.chat_message("assistant"):
+                    st.markdown("En caso de que haya más de un socio, la opción sería una LLC Multi Member. Florida sigue siendo una buena elección si hay enfoque en inversión inmobiliaria o operaciones con bancos locales.")
+                with st.chat_message("assistant"):
+                    st.markdown("El costo estimado es de **USD 1040** e incluye formación, EIN, Operating Agreement, y soporte completo para abrir la cuenta.")
+                with st.chat_message("assistant"):
+                    st.markdown("A diferencia de la Single Member, esta estructura requiere declaración informativa y un formulario K-1 por socio ante el IRS.")
+                with st.chat_message("assistant"):
+                    st.markdown("Para casos de real estate entre socios extranjeros, recomendamos evaluar también una estructura offshore como holding, para evitar el Estate Tax.")
+                with st.chat_message("assistant"):
+                    st.markdown("📄 **Presupuesto MM – Florida.pdf")
+                with st.chat_message("assistant"):
+                    st.markdown("¿Querés que lo veamos juntos en una llamada rápida?")
 
 elif intencion == "Declarar impuestos":
     tiene_llc = st.radio("¿Ya tenés una LLC formada?", ["Sí", "No"])
