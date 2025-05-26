@@ -56,7 +56,6 @@ if intencion == "Abrir una LLC":
         if estado and tipo:
             key = f"llc_{estado.lower().replace(' ', '_')}_{tipo.lower().split()[0]}"
             if key in respuestas:
-    if key in respuestas:
     st.markdown("### Resultado")
     st.markdown(respuestas[key])
 
