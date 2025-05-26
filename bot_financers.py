@@ -98,34 +98,30 @@ elif intencion == "Declarar impuestos":
     else:
         st.warning("Para declarar impuestos primero debés tener una LLC. Podemos ayudarte con la apertura.")
 
-elif intencion == "Servicios contables":
-    st.subheader("Servicios contables adicionales que ofrecemos")
-    st.markdown("""
-- Certificación de balances y estados contables para bancos o visas  
-- Presentación del BOI ante FinCEN (obligatorio desde 2024)  
-- Correcciones de errores en declaraciones pasadas  
-- Soporte en casos con herencias, ITIN, o estructura previa
-""")
-    st.markdown("👉 [Agendá tu llamada](https://calendly.com/financers/llamada)")
+elif intencion == "Abrir una cuenta bancaria":
+    tiene_llc = st.radio("¿Ya tenés una LLC formada con EIN?", ["Sí", "No"])
+    if tiene_llc == "No":
+        st.warning("Para abrir una cuenta bancaria necesitás una LLC registrada y el EIN. Podemos ayudarte con eso.")
+    else:
+        st.markdown("Podemos ayudarte a abrir cuentas en:")
+        st.markdown("- **Mercury:** 100% online, sin presencialidad")
+        st.markdown("- **Relay:** multiusuario, ideal para equipos")
+        st.markdown("- **OceanBank o IFB:** desde USD 10.000 a 25.000 de depósito mínimo – Costo de apertura: USD 1500")
+        st.markdown("### Resultado")
+        st.markdown(respuestas["cuenta_sin_llc"])
 
-st.markdown("### ¿Usás la LLC para propiedades o real estate?")
-st.markdown("""
-- Si comprás propiedades en EE.UU. a nombre de la LLC, podrías quedar expuesto al impuesto a la herencia (Estate Tax).
-- La solución ideal es que una sociedad offshore (como una BVI) sea la dueña de la LLC.
-- Así, se evita que los activos queden registrados a tu nombre personal ante el IRS.
+elif intencion == "Enviar una consulta personalizada":
+    st.subheader("Dejanos tu consulta y te contactamos personalmente")
+    nombre = st.text_input("Nombre completo")
+    contacto = st.text_input("Correo electrónico o WhatsApp")
+    consulta = st.text_area("Escribí tu consulta")
 
-👉 Artículo recomendado: [Estructura para evitar Estate Tax](https://www.financers.com.ar/estructura-en-bvi-para-evitar-el-estate-inheritance-tax-en-usa/)
-""")
-
-st.markdown("### ¿Usás la LLC para propiedades o real estate?")
-st.markdown("""
-- Si comprás propiedades en EE.UU. a nombre de la LLC, podrías quedar expuesto al impuesto a la herencia (Estate Tax).
-- La solución ideal es que una sociedad offshore (como una BVI) sea la dueña de la LLC.
-- Así, se evita que los activos queden registrados a tu nombre personal ante el IRS.
-
-👉 Artículo recomendado: [Estructura para evitar Estate Tax](https://www.financers.com.ar/estructura-en-bvi-para-evitar-el-estate-inheritance-tax-en-usa/)
-""")
-
+    if st.button("Enviar consulta"):
+        if nombre and contacto and consulta:
+            st.success("Gracias. Nuestro equipo se pondrá en contacto en breve.")
+            st.markdown(f"**Resumen:**\n\nNombre: {nombre}\nContacto: {contacto}\nConsulta: {consulta}")
+        else:
+            st.warning("Por favor completá todos los campos.")
 
 elif intencion == "No sé por dónde empezar":
     st.subheader("¡Empecemos por lo básico!")
