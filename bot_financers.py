@@ -118,7 +118,7 @@ st.markdown(
     "- Después de agendar, te llega un correo con el link de videollamada"
 )
 
-else:
+    else:
         st.warning("Para declarar impuestos primero debés tener una LLC. Podemos ayudarte con la apertura.")
 
 elif intencion == "Abrir una cuenta bancaria":
