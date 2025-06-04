@@ -65,7 +65,6 @@ if intencion == "Abrir una LLC":
                 st.markdown("### Resultado")
                 st.markdown(respuestas[key])
 
-
 elif intencion == "Declarar impuestos":
     tiene_llc = st.radio("¿Ya tenés una LLC formada?", ["Sí", "No"])
     if tiene_llc == "Sí":
@@ -101,25 +100,27 @@ elif intencion == "Declarar impuestos":
                 st.markdown("- Agente registrado: USD 100\n- Franchise Tax: USD 300")
 
             st.markdown("### ¿Querés avanzar con una videollamada gratuita?")
+            st.markdown("#### 📅 Opción 1: Agenda con el Cr. Maximiliano Mira Salas")
+            st.markdown(
+                "- [Agendar llamada](https://calendly.com/crmirasalas/30min)\n"
+                "- Especialista en fiscalidad internacional y estructuras para no residentes\n"
+                "- Ideal si tenés propiedades, dudas complejas o querés validar decisiones fiscales\n"
+                "- Al agendar, recibís un correo con el enlace para conectarte"
+            )
 
-st.markdown("#### 📅 Opción 1: Agenda con el Cr. Maximiliano Mira Salas")
-st.markdown(
-    "- [Agendar llamada](https://calendly.com/crmirasalas/30min)\n"
-    "- Especialista en fiscalidad internacional y estructuras para no residentes\n"
-    "- Ideal si tenés propiedades, dudas complejas o querés validar decisiones fiscales\n"
-    "- Al agendar, recibís un correo con el enlace para conectarte"
-)
-
-st.markdown("#### 📅 Opción 2: Agenda con Matías Gasser")
-st.markdown(
-    "- [Agendar llamada](https://calendly.com/mgasser-ueq/30min)\n"
-    "- Ideal para avanzar con una LLC, resolver dudas generales o cotizar servicios\n"
-    "- La mayoría de nuestros servicios se pagan solo si decidís avanzar\n"
-    "- Después de agendar, te llega un correo con el link de videollamada"
-)
+            st.markdown("#### 📅 Opción 2: Agenda con Matías Gasser")
+            st.markdown(
+                "- [Agendar llamada](https://calendly.com/mgasser-ueq/30min)\n"
+                "- Ideal para avanzar con una LLC, resolver dudas generales o cotizar servicios\n"
+                "- La mayoría de nuestros servicios se pagan solo si decidís avanzar\n"
+                "- Después de agendar, te llega un correo con el link de videollamada"
+            )
 
     else:
         st.warning("Para declarar impuestos primero debés tener una LLC. Podemos ayudarte con la apertura.")
+
+
+
 
 elif intencion == "Abrir una cuenta bancaria":
     tiene_llc = st.radio("¿Ya tenés una LLC formada con EIN?", ["Sí", "No"])
