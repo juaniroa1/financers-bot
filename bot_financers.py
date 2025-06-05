@@ -6,8 +6,9 @@ st.markdown("Ayudamos a extranjeros a operar legalmente en EE.UU. con soluciones
 st.markdown("Seleccioná el servicio sobre el cual querés recibir información:")
 
 intencion = st.selectbox("¿Cómo podemos ayudarte?", [
-    "", "Abrir una LLC", "Declarar impuestos", "Abrir una cuenta bancaria", "Enviar una consulta personalizada", "¿Quiénes somos?", "Preguntas frecuentes", "No sé por dónde empezar","Simular conversación (caso real)"
+    "", "Abrir una LLC", "Declarar impuestos", "Abrir una cuenta bancaria", "Enviar una consulta personalizada", "¿Quiénes somos?", "Preguntas frecuentes", "No sé por dónde empezar"
 ])
+
 
 estado = tipo = None
 
@@ -24,10 +25,6 @@ respuestas = {
     "impuestos_multi": "- Formulario 1065 obligatorio\n- Cada socio debe recibir un K-1\n- W-8BEN-E si los socios son extranjeros\n- Multa por no presentar: USD 210 por socio por mes\n**Agendá tu llamada sin costo con:** Matías Gasser https://calendly.com/mgasser-ueq/30min o con el Cr. Mira Salas https://calendly.com/crmirasalas/30min",
     "cuenta_sin_llc": "- Requiere LLC + EIN\n- Podemos ayudarte a abrir cuenta en Mercury, Relay o bancos físicos\n- Si no tenés estructura, sugerimos abrir primero una LLC\n**Agendá tu llamada sin costo con:** Matías Gasser https://calendly.com/mgasser-ueq/30min o con el Cr. Mira Salas https://calendly.com/crmirasalas/30min"
 }
-
-
-
-
 
 
 
@@ -61,11 +58,44 @@ if intencion == "Abrir una LLC":
 
         if estado and tipo:
             key = f"llc_{estado.lower().replace(' ', '_')}_{tipo.lower().split()[0]}"
+            
             if key in respuestas:
                 st.markdown("### Resultado")
                 st.markdown(respuestas[key])
 
-elif intencion == "Declarar impuestos":
+                # PDF descargables según estado y tipo (solo si coincide)
+                pdf_links = {
+                    "llc_florida_single": "https://raw.githubusercontent.com/juaniroa1/financers-bot/main/pdfs/LLC%20-%20Single%20Member%20Florida.pdf",
+                    "llc_new_mexico_single": "https://raw.githubusercontent.com/juaniroa1/financers-bot/main/pdfs/LLC%20-%20Single%20Member%20New%20Mexico.pdf",
+                    "llc_delaware_single": "https://raw.githubusercontent.com/juaniroa1/financers-bot/main/pdfs/LLC%20-%20Delaware.pdf"
+                }
+                # Equivalencias MM con su PDF de SM y texto aclaratorio
+                equivalentes_mm = {
+                    "llc_florida_multi": ("llc_florida_single", "La estructura Multi Member requiere formulario 1065 y K-1 para cada socio. La declaración federal cuesta 800 USD. Recomendamos esta opción si habrá cuentas compartidas, más de un responsable o capital conjunto."),
+                    "llc_new_mexico_multi": ("llc_new_mexico_single", "Como Multi Member, el costo estimado sube a 700 USD e incluye cuenta bancaria. La declaración anual cuesta 800 USD e implica emitir un K-1 por cada socio."),
+                    "llc_delaware_multi": ("llc_delaware_single", "La versión Multi Member cuesta 1400 USD e incluye BOI, BE-13 y cuenta bancaria. La declaración ante IRS cuesta 800 USD. Ideal si vas a compartir responsabilidades o ingresos.")
+                }
+
+                if key in pdf_links:
+                    st.markdown(f"📄 [Descargar PDF informativo]({pdf_links[key]})")
+                elif key in equivalentes_mm:
+                    sm_key, extra = equivalentes_mm[key]
+                    st.markdown(f"📄 [Descargar PDF informativo (versión Single Member)]({pdf_links[sm_key]})")
+                    st.info(extra)
+                
+
+# PDFs de presupuestos para declaración de impuestos
+pdf_impuestos = {
+    "florida_single": "https://raw.githubusercontent.com/juaniroa1/financers-bot/main/pdfs/Presupuesto%20SM%20-%20Florida%20(FL)%20-FINANCERS.pptx.pdf",
+    "florida_multi": "https://raw.githubusercontent.com/juaniroa1/financers-bot/main/pdfs/Presupuesto%20MM%20-%20Florida%20(FL)%20-FINANCERS.pptx.pdf",
+    "new_mexico_single": "https://raw.githubusercontent.com/juaniroa1/financers-bot/main/pdfs/Presupuesto%20SM%20-%20New%20Mexico%20(NM)%20-FINANCERS.pptx.pdf",
+    "new_mexico_multi": "https://raw.githubusercontent.com/juaniroa1/financers-bot/main/pdfs/Presupuesto%20MM%20-%20New%20Mexico%20(NM)%20-FINANCERS.pptx.pdf",
+    "delaware_single": "https://raw.githubusercontent.com/juaniroa1/financers-bot/main/pdfs/Presupuesto%20SM%20-%20Delaware%20(DE)%20-FINANCERS.pptx.pdf",
+    "delaware_multi": "https://raw.githubusercontent.com/juaniroa1/financers-bot/main/pdfs/Presupuesto%20MM%20-%20Delaware%20(DE)%20-FINANCERS.pptx.pdf",
+    "wyoming_single": "https://raw.githubusercontent.com/juaniroa1/financers-bot/main/pdfs/Presupuesto%20SM%20-%20Wyoming%20(WY)%20-FINANCERS.pptx.pdf",
+    "wyoming_multi": "https://raw.githubusercontent.com/juaniroa1/financers-bot/main/pdfs/Presupuesto%20MM%20-%20Wyoming%20(WY)%20-FINANCERS.pptx.pdf"
+}
+if intencion == "Declarar impuestos":
     tiene_llc = st.radio("¿Ya tenés una LLC formada?", ["Sí", "No"])
     if tiene_llc == "Sí":
         st.markdown("¿Podés confirmarme lo siguiente?")
@@ -86,6 +116,9 @@ elif intencion == "Declarar impuestos":
 
         if estado and tipo:
             st.markdown("### Costos y obligaciones para tu declaración:")
+            key_pdf = f"{estado.lower().replace(' ', '_')}_{tipo.lower().split()[0]}"
+            if key_pdf in pdf_impuestos:
+                st.markdown(f"📄 [Descargar presupuesto detallado en PDF]({pdf_impuestos[key_pdf]})")
             if tipo == "Single Member":
                 st.markdown("- **Declaración ante el IRS:** USD 500")
             else:
@@ -99,30 +132,12 @@ elif intencion == "Declarar impuestos":
             elif estado == "Delaware":
                 st.markdown("- Agente registrado: USD 100\n- Franchise Tax: USD 300")
 
-            st.markdown("### ¿Querés avanzar con una videollamada gratuita?")
-            st.markdown("#### 📅 Opción 1: Agenda con el Cr. Maximiliano Mira Salas")
-            st.markdown(
-                "- [Agendar llamada](https://calendly.com/crmirasalas/30min)\n"
-                "- Especialista en fiscalidad internacional y estructuras para no residentes\n"
-                "- Ideal si tenés propiedades, dudas complejas o querés validar decisiones fiscales\n"
-                "- Al agendar, recibís un correo con el enlace para conectarte"
-            )
-
-            st.markdown("#### 📅 Opción 2: Agenda con Matías Gasser")
-            st.markdown(
-                "- [Agendar llamada](https://calendly.com/mgasser-ueq/30min)\n"
-                "- Ideal para avanzar con una LLC, resolver dudas generales o cotizar servicios\n"
-                "- La mayoría de nuestros servicios se pagan solo si decidís avanzar\n"
-                "- Después de agendar, te llega un correo con el link de videollamada"
-            )
+            st.markdown("[Agendá tu llamada para avanzar](https://calendly.com/financers/llamada)")
 
     else:
         st.warning("Para declarar impuestos primero debés tener una LLC. Podemos ayudarte con la apertura.")
 
-
-
-
-elif intencion == "Abrir una cuenta bancaria":
+if intencion == "Abrir una cuenta bancaria":
     tiene_llc = st.radio("¿Ya tenés una LLC formada con EIN?", ["Sí", "No"])
     if tiene_llc == "No":
         st.warning("Para abrir una cuenta bancaria necesitás una LLC registrada y el EIN. Podemos ayudarte con eso.")
@@ -134,7 +149,7 @@ elif intencion == "Abrir una cuenta bancaria":
         st.markdown("### Resultado")
         st.markdown(respuestas["cuenta_sin_llc"])
 
-elif intencion == "Enviar una consulta personalizada":
+if intencion == "Enviar una consulta personalizada":
     st.subheader("Dejanos tu consulta y te contactamos personalmente")
     nombre = st.text_input("Nombre completo")
     contacto = st.text_input("Correo electrónico o WhatsApp")
@@ -147,7 +162,7 @@ elif intencion == "Enviar una consulta personalizada":
         else:
             st.warning("Por favor completá todos los campos.")
 
-elif intencion == "No sé por dónde empezar":
+if intencion == "No sé por dónde empezar":
     st.subheader("¡Empecemos por lo básico!")
 
     opciones = {
@@ -176,7 +191,7 @@ Te ayudamos a abrir una empresa 100% online desde tu país, obtener el EIN, y ab
     st.markdown(opciones[seleccion])
 
 
-elif intencion == "Preguntas frecuentes":
+if intencion == "Preguntas frecuentes":
     st.subheader("Preguntas frecuentes")
 
     categorias = {
@@ -188,11 +203,7 @@ elif intencion == "Preguntas frecuentes":
 - **Florida** es excelente si vas a invertir en inmuebles, operar con cuentas bancarias locales o necesitás tener presencia en un estado comercialmente activo.
 - **Delaware** es el más prestigioso desde el punto de vista legal. Muy recomendado para startups, empresas tecnológicas o si vas a levantar capital o tener inversores.
 
-**📅 Elegí con quién querés agendar una videollamada gratuita:**
-
-- [Agenda con el Cr. Maximiliano Mira Salas](https://calendly.com/crmirasalas/30min) – especialista en fiscalidad internacional y estructuras para no residentes.
-- [Agenda con Matías Gasser](https://calendly.com/mgasser-ueq/30min) – ideal para avanzar con una LLC o resolver dudas generales.
-
+👉 [Agendá tu llamada](https://calendly.com/financers/llamada)
 """),
             ("¿Qué incluye el servicio de apertura?",
              """Nuestro servicio incluye:
@@ -205,32 +216,20 @@ elif intencion == "Preguntas frecuentes":
 - Asistencia para apertura de cuenta bancaria
 - Asesoría en español durante todo el proceso
 
-**📅 Elegí con quién querés agendar una videollamada gratuita:**
-
-- [Agenda con el Cr. Maximiliano Mira Salas](https://calendly.com/crmirasalas/30min) – especialista en fiscalidad internacional y estructuras para no residentes.
-- [Agenda con Matías Gasser](https://calendly.com/mgasser-ueq/30min) – ideal para avanzar con una LLC o resolver dudas generales.
-
+👉 [Agendá tu llamada](https://calendly.com/financers/llamada)
 """),
             ("¿Qué significa ser Single Member o Multi Member?",
              """- **Single Member (SM):** una sola persona como titular. Declaración más simple (formulario 5472). Menor costo de mantenimiento.
 - **Multi Member (MM):** dos o más socios. Requiere presentación del formulario 1065 + K-1. Útil para cuentas compartidas o responsabilidades divididas.
 
-**📅 Elegí con quién querés agendar una videollamada gratuita:**
-
-- [Agenda con el Cr. Maximiliano Mira Salas](https://calendly.com/crmirasalas/30min) – especialista en fiscalidad internacional y estructuras para no residentes.
-- [Agenda con Matías Gasser](https://calendly.com/mgasser-ueq/30min) – ideal para avanzar con una LLC o resolver dudas generales.
-
+👉 [Agendá tu llamada](https://calendly.com/financers/llamada)
 """),
             ("¿La LLC permite recibir pagos internacionales?",
              """Sí. Con tu LLC podés recibir pagos desde cualquier parte del mundo. Plataformas como Stripe, Wise, Payoneer, Deel, Binance, etc. son compatibles.
 
 También podés emitir facturas a clientes internacionales y operar como proveedor global.
 
-**📅 Elegí con quién querés agendar una videollamada gratuita:**
-
-- [Agenda con el Cr. Maximiliano Mira Salas](https://calendly.com/crmirasalas/30min) – especialista en fiscalidad internacional y estructuras para no residentes.
-- [Agenda con Matías Gasser](https://calendly.com/mgasser-ueq/30min) – ideal para avanzar con una LLC o resolver dudas generales.
-
+👉 [Agendá tu llamada](https://calendly.com/financers/llamada)
 """),
             ("¿Qué costo tiene abrir una LLC?",
              """Depende del estado y tipo de estructura:
@@ -241,58 +240,34 @@ También podés emitir facturas a clientes internacionales y operar como proveed
 
 Todos incluyen la cuenta bancaria y presentación BOI.
 
-**📅 Elegí con quién querés agendar una videollamada gratuita:**
-
-- [Agenda con el Cr. Maximiliano Mira Salas](https://calendly.com/crmirasalas/30min) – especialista en fiscalidad internacional y estructuras para no residentes.
-- [Agenda con Matías Gasser](https://calendly.com/mgasser-ueq/30min) – ideal para avanzar con una LLC o resolver dudas generales.
-
+👉 [Agendá tu llamada](https://calendly.com/financers/llamada)
 """)
         ],
         "Estate Tax y estructuras offshore": [
             ("¿Qué es el Estate Tax y cuándo aplica?",
              """El Estate Tax es un impuesto a la herencia que puede alcanzar hasta el 40% sobre el valor de los activos que un extranjero posea directamente en EE.UU., como propiedades a nombre de una LLC. Si el titular fallece sin una estructura que lo proteja, sus herederos podrían enfrentar esta carga fiscal. Para evitarlo, se recomienda crear una sociedad offshore (como una BVI) que sea la propietaria de la LLC.
 
-**📅 Elegí con quién querés agendar una videollamada gratuita:**
-
-- [Agenda con el Cr. Maximiliano Mira Salas](https://calendly.com/crmirasalas/30min) – especialista en fiscalidad internacional y estructuras para no residentes.
-- [Agenda con Matías Gasser](https://calendly.com/mgasser-ueq/30min) – ideal para avanzar con una LLC o resolver dudas generales.
-
+👉 [Agendá tu llamada](https://calendly.com/financers/llamada)
 """),
             ("¿Qué tipo de offshore recomiendan?",
              """La estructura más utilizada por nuestros clientes es una sociedad en las Islas Vírgenes Británicas (BVI). Esta entidad es confidencial, ágil de constituir, y permite que vos seas el beneficiario final sin figurar directamente en EE.UU. Es ideal para propietarios de inmuebles o cuentas bancarias que quieren reducir riesgos legales y fiscales.
 
-**📅 Elegí con quién querés agendar una videollamada gratuita:**
-
-- [Agenda con el Cr. Maximiliano Mira Salas](https://calendly.com/crmirasalas/30min) – especialista en fiscalidad internacional y estructuras para no residentes.
-- [Agenda con Matías Gasser](https://calendly.com/mgasser-ueq/30min) – ideal para avanzar con una LLC o resolver dudas generales.
-
+👉 [Agendá tu llamada](https://calendly.com/financers/llamada)
 """),
             ("¿Puedo usar una offshore para proteger activos?",
              """Sí. Muchas veces se crea una BVI como holding que controla la LLC estadounidense. Esto no sólo evita el Estate Tax, sino que brinda una capa adicional de privacidad y planificación fiscal. Es legal, transparente, y muy común en estructuras de no residentes.
 
-**📅 Elegí con quién querés agendar una videollamada gratuita:**
-
-- [Agenda con el Cr. Maximiliano Mira Salas](https://calendly.com/crmirasalas/30min) – especialista en fiscalidad internacional y estructuras para no residentes.
-- [Agenda con Matías Gasser](https://calendly.com/mgasser-ueq/30min) – ideal para avanzar con una LLC o resolver dudas generales.
-
+👉 [Agendá tu llamada](https://calendly.com/financers/llamada)
 """),
             ("¿Es obligatorio usar offshore si tengo propiedades?",
              """No es obligatorio, pero sí altamente recomendable si el valor de los activos supera los USD 60.000. Por encima de ese umbral, el IRS podría aplicar el Estate Tax. Si querés evitar riesgos a largo plazo, es mejor prevenir con una estructura adecuada.
 
-**📅 Elegí con quién querés agendar una videollamada gratuita:**
-
-- [Agenda con el Cr. Maximiliano Mira Salas](https://calendly.com/crmirasalas/30min) – especialista en fiscalidad internacional y estructuras para no residentes.
-- [Agenda con Matías Gasser](https://calendly.com/mgasser-ueq/30min) – ideal para avanzar con una LLC o resolver dudas generales.
-
+👉 [Agendá tu llamada](https://calendly.com/financers/llamada)
 """),
             ("¿La offshore paga impuestos?",
              """No. Una sociedad offshore como BVI no paga impuestos en su país de incorporación ni en EE.UU. si no opera directamente allí. Su función es de control y tenencia, no de operación directa.
 
-**📅 Elegí con quién querés agendar una videollamada gratuita:**
-
-- [Agenda con el Cr. Maximiliano Mira Salas](https://calendly.com/crmirasalas/30min) – especialista en fiscalidad internacional y estructuras para no residentes.
-- [Agenda con Matías Gasser](https://calendly.com/mgasser-ueq/30min) – ideal para avanzar con una LLC o resolver dudas generales.
-
+👉 [Agendá tu llamada](https://calendly.com/financers/llamada)
 """)
         ],
         
@@ -305,11 +280,7 @@ Todos incluyen la cuenta bancaria y presentación BOI.
 
 No declarar puede implicar multas de hasta USD 25.000.
 
-**📅 Elegí con quién querés agendar una videollamada gratuita:**
-
-- [Agenda con el Cr. Maximiliano Mira Salas](https://calendly.com/crmirasalas/30min) – especialista en fiscalidad internacional y estructuras para no residentes.
-- [Agenda con Matías Gasser](https://calendly.com/mgasser-ueq/30min) – ideal para avanzar con una LLC o resolver dudas generales.
-
+👉 [Agendá tu llamada](https://calendly.com/financers/llamada)
 """),
             ("¿Cuál es el costo de la declaración anual?",
              """- SM: USD 500
@@ -319,44 +290,28 @@ Además, sumá:
 - RA: USD 100
 - Estado: FL (139), DE (300), NM (0), WY (62)
 
-**📅 Elegí con quién querés agendar una videollamada gratuita:**
-
-- [Agenda con el Cr. Maximiliano Mira Salas](https://calendly.com/crmirasalas/30min) – especialista en fiscalidad internacional y estructuras para no residentes.
-- [Agenda con Matías Gasser](https://calendly.com/mgasser-ueq/30min) – ideal para avanzar con una LLC o resolver dudas generales.
-
+👉 [Agendá tu llamada](https://calendly.com/financers/llamada)
 """),
             ("¿Qué es el RA, Sunbiz o Franchise Tax?",
              """- **RA:** agente registrado (USD 100/año)
 - **Sunbiz:** registro estatal obligatorio en Florida (USD 139)
 - **Franchise Tax:** impuesto anual de Delaware (USD 300)
 
-**📅 Elegí con quién querés agendar una videollamada gratuita:**
-
-- [Agenda con el Cr. Maximiliano Mira Salas](https://calendly.com/crmirasalas/30min) – especialista en fiscalidad internacional y estructuras para no residentes.
-- [Agenda con Matías Gasser](https://calendly.com/mgasser-ueq/30min) – ideal para avanzar con una LLC o resolver dudas generales.
-
+👉 [Agendá tu llamada](https://calendly.com/financers/llamada)
 """),
             ("¿Puedo pagarme un sueldo desde la LLC?",
              """Si no sos residente fiscal en EE.UU., podés hacer transferencias personales como retiro de utilidades.
 
 Si sos residente o tenés actividad física allá, necesitás registrarte como empleador.
 
-**📅 Elegí con quién querés agendar una videollamada gratuita:**
-
-- [Agenda con el Cr. Maximiliano Mira Salas](https://calendly.com/crmirasalas/30min) – especialista en fiscalidad internacional y estructuras para no residentes.
-- [Agenda con Matías Gasser](https://calendly.com/mgasser-ueq/30min) – ideal para avanzar con una LLC o resolver dudas generales.
-
+👉 [Agendá tu llamada](https://calendly.com/financers/llamada)
 """),
             ("¿Cómo declaro en Argentina los ingresos desde la LLC?",
              """Se declaran como ingresos de fuente extranjera en el Impuesto a las Ganancias.
 
 También pueden estar alcanzados por Bienes Personales. Consultá con tu contador local.
 
-**📅 Elegí con quién querés agendar una videollamada gratuita:**
-
-- [Agenda con el Cr. Maximiliano Mira Salas](https://calendly.com/crmirasalas/30min) – especialista en fiscalidad internacional y estructuras para no residentes.
-- [Agenda con Matías Gasser](https://calendly.com/mgasser-ueq/30min) – ideal para avanzar con una LLC o resolver dudas generales.
-
+👉 [Agendá tu llamada](https://calendly.com/financers/llamada)
 """)
         ],
         "Cuenta bancaria": [
@@ -368,11 +323,7 @@ También pueden estar alcanzados por Bienes Personales. Consultá con tu contado
 - Recibe pagos de Stripe, Wise, Deel, Payoneer
 - No requiere residencia en EE.UU.
 
-**📅 Elegí con quién querés agendar una videollamada gratuita:**
-
-- [Agenda con el Cr. Maximiliano Mira Salas](https://calendly.com/crmirasalas/30min) – especialista en fiscalidad internacional y estructuras para no residentes.
-- [Agenda con Matías Gasser](https://calendly.com/mgasser-ueq/30min) – ideal para avanzar con una LLC o resolver dudas generales.
-
+👉 [Agendá tu llamada](https://calendly.com/financers/llamada)
 """),
             ("¿Puedo abrir una cuenta como extranjero?",
              """Sí. No necesitás visa ni estar en EE.UU.
@@ -383,11 +334,7 @@ Solo necesitás:
 - Documentación societaria
 - Pasaporte vigente
 
-**📅 Elegí con quién querés agendar una videollamada gratuita:**
-
-- [Agenda con el Cr. Maximiliano Mira Salas](https://calendly.com/crmirasalas/30min) – especialista en fiscalidad internacional y estructuras para no residentes.
-- [Agenda con Matías Gasser](https://calendly.com/mgasser-ueq/30min) – ideal para avanzar con una LLC o resolver dudas generales.
-
+👉 [Agendá tu llamada](https://calendly.com/financers/llamada)
 """),
             ("¿Qué necesito para abrir la cuenta?",
              """- LLC registrada
@@ -396,29 +343,17 @@ Solo necesitás:
 - Pasaporte
 - Formulario KYC del banco
 
-**📅 Elegí con quién querés agendar una videollamada gratuita:**
-
-- [Agenda con el Cr. Maximiliano Mira Salas](https://calendly.com/crmirasalas/30min) – especialista en fiscalidad internacional y estructuras para no residentes.
-- [Agenda con Matías Gasser](https://calendly.com/mgasser-ueq/30min) – ideal para avanzar con una LLC o resolver dudas generales.
-
+👉 [Agendá tu llamada](https://calendly.com/financers/llamada)
 """),
             ("¿Puedo transferir fondos desde Argentina u otros países?",
              """Sí. Relay permite recibir transferencias SWIFT desde el exterior y también operar con Wise, Payoneer, etc.
 
-**📅 Elegí con quién querés agendar una videollamada gratuita:**
-
-- [Agenda con el Cr. Maximiliano Mira Salas](https://calendly.com/crmirasalas/30min) – especialista en fiscalidad internacional y estructuras para no residentes.
-- [Agenda con Matías Gasser](https://calendly.com/mgasser-ueq/30min) – ideal para avanzar con una LLC o resolver dudas generales.
-
+👉 [Agendá tu llamada](https://calendly.com/financers/llamada)
 """),
             ("¿Qué pasa si no puedo completar el onboarding?",
              """Nuestro equipo te ayuda a corregir errores y reintentar. Si Relay no aprueba, usamos Mercury, IFB u otras opciones.
 
-**📅 Elegí con quién querés agendar una videollamada gratuita:**
-
-- [Agenda con el Cr. Maximiliano Mira Salas](https://calendly.com/crmirasalas/30min) – especialista en fiscalidad internacional y estructuras para no residentes.
-- [Agenda con Matías Gasser](https://calendly.com/mgasser-ueq/30min) – ideal para avanzar con una LLC o resolver dudas generales.
-
+👉 [Agendá tu llamada](https://calendly.com/financers/llamada)
 """)
         ]
     }
@@ -437,5 +372,3 @@ Solo necesitás:
 st.markdown("---")
 st.markdown("**Importante:** Si no estás más de 183 días en EE.UU., no generás ingresos conectados (ECI) ni ingresos de fuente estadounidense, no debés tributar. Aun así, debés presentar tu declaración anual ante el IRS.")
 st.markdown("**Si tenés inmuebles o empleados en EE.UU.**, deberías tributar y lo recomendable sería una C-Corp (tasa fija del 21%).")
-
-
