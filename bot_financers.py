@@ -216,20 +216,20 @@ if intencion == "Preguntas frecuentes":
 - Asistencia para apertura de cuenta bancaria
 - Asesoría en español durante todo el proceso
 
-👉 [Agendá tu llamada](https://calendly.com/financers/llamada)
+👉 **Agendá tu llamada sin costo con:** [Matías Gasser](https://calendly.com/mgasser-ueq/30min) o con el Cr. Mira Salas [aquí](https://calendly.com/crmirasalas/30min)
 """),
             ("¿Qué significa ser Single Member o Multi Member?",
              """- **Single Member (SM):** una sola persona como titular. Declaración más simple (formulario 5472). Menor costo de mantenimiento.
 - **Multi Member (MM):** dos o más socios. Requiere presentación del formulario 1065 + K-1. Útil para cuentas compartidas o responsabilidades divididas.
 
-👉 [Agendá tu llamada](https://calendly.com/financers/llamada)
+👉 **Agendá tu llamada sin costo con:** [Matías Gasser](https://calendly.com/mgasser-ueq/30min) o con el Cr. Mira Salas [aquí](https://calendly.com/crmirasalas/30min)
 """),
             ("¿La LLC permite recibir pagos internacionales?",
              """Sí. Con tu LLC podés recibir pagos desde cualquier parte del mundo. Plataformas como Stripe, Wise, Payoneer, Deel, Binance, etc. son compatibles.
 
 También podés emitir facturas a clientes internacionales y operar como proveedor global.
 
-👉 [Agendá tu llamada](https://calendly.com/financers/llamada)
+👉 **Agendá tu llamada sin costo con:** [Matías Gasser](https://calendly.com/mgasser-ueq/30min) o con el Cr. Mira Salas [aquí](https://calendly.com/crmirasalas/30min)
 """),
             ("¿Qué costo tiene abrir una LLC?",
              """Depende del estado y tipo de estructura:
@@ -240,34 +240,34 @@ También podés emitir facturas a clientes internacionales y operar como proveed
 
 Todos incluyen la cuenta bancaria y presentación BOI.
 
-👉 [Agendá tu llamada](https://calendly.com/financers/llamada)
+👉 **Agendá tu llamada sin costo con:** [Matías Gasser](https://calendly.com/mgasser-ueq/30min) o con el Cr. Mira Salas [aquí](https://calendly.com/crmirasalas/30min)
 """)
         ],
         "Estate Tax y estructuras offshore": [
             ("¿Qué es el Estate Tax y cuándo aplica?",
              """El Estate Tax es un impuesto a la herencia que puede alcanzar hasta el 40% sobre el valor de los activos que un extranjero posea directamente en EE.UU., como propiedades a nombre de una LLC. Si el titular fallece sin una estructura que lo proteja, sus herederos podrían enfrentar esta carga fiscal. Para evitarlo, se recomienda crear una sociedad offshore (como una BVI) que sea la propietaria de la LLC.
 
-👉 [Agendá tu llamada](https://calendly.com/financers/llamada)
+👉 **Agendá tu llamada sin costo con:** [Matías Gasser](https://calendly.com/mgasser-ueq/30min) o con el Cr. Mira Salas [aquí](https://calendly.com/crmirasalas/30min)
 """),
             ("¿Qué tipo de offshore recomiendan?",
              """La estructura más utilizada por nuestros clientes es una sociedad en las Islas Vírgenes Británicas (BVI). Esta entidad es confidencial, ágil de constituir, y permite que vos seas el beneficiario final sin figurar directamente en EE.UU. Es ideal para propietarios de inmuebles o cuentas bancarias que quieren reducir riesgos legales y fiscales.
 
-👉 [Agendá tu llamada](https://calendly.com/financers/llamada)
+👉 **Agendá tu llamada sin costo con:** [Matías Gasser](https://calendly.com/mgasser-ueq/30min) o con el Cr. Mira Salas [aquí](https://calendly.com/crmirasalas/30min)
 """),
             ("¿Puedo usar una offshore para proteger activos?",
              """Sí. Muchas veces se crea una BVI como holding que controla la LLC estadounidense. Esto no sólo evita el Estate Tax, sino que brinda una capa adicional de privacidad y planificación fiscal. Es legal, transparente, y muy común en estructuras de no residentes.
 
-👉 [Agendá tu llamada](https://calendly.com/financers/llamada)
+👉 **Agendá tu llamada sin costo con:** [Matías Gasser](https://calendly.com/mgasser-ueq/30min) o con el Cr. Mira Salas [aquí](https://calendly.com/crmirasalas/30min)
 """),
             ("¿Es obligatorio usar offshore si tengo propiedades?",
              """No es obligatorio, pero sí altamente recomendable si el valor de los activos supera los USD 60.000. Por encima de ese umbral, el IRS podría aplicar el Estate Tax. Si querés evitar riesgos a largo plazo, es mejor prevenir con una estructura adecuada.
 
-👉 [Agendá tu llamada](https://calendly.com/financers/llamada)
+👉 **Agendá tu llamada sin costo con:** [Matías Gasser](https://calendly.com/mgasser-ueq/30min) o con el Cr. Mira Salas [aquí](https://calendly.com/crmirasalas/30min)
 """),
             ("¿La offshore paga impuestos?",
              """No. Una sociedad offshore como BVI no paga impuestos en su país de incorporación ni en EE.UU. si no opera directamente allí. Su función es de control y tenencia, no de operación directa.
 
-👉 [Agendá tu llamada](https://calendly.com/financers/llamada)
+👉 **Agendá tu llamada sin costo con:** [Matías Gasser](https://calendly.com/mgasser-ueq/30min) o con el Cr. Mira Salas [aquí](https://calendly.com/crmirasalas/30min)
 """)
         ],
         
@@ -280,7 +280,7 @@ Todos incluyen la cuenta bancaria y presentación BOI.
 
 No declarar puede implicar multas de hasta USD 25.000.
 
-👉 [Agendá tu llamada](https://calendly.com/financers/llamada)
+👉 **Agendá tu llamada sin costo con:** [Matías Gasser](https://calendly.com/mgasser-ueq/30min) o con el Cr. Mira Salas [aquí](https://calendly.com/crmirasalas/30min)
 """),
             ("¿Cuál es el costo de la declaración anual?",
              """- SM: USD 500
@@ -290,40 +290,40 @@ Además, sumá:
 - RA: USD 100
 - Estado: FL (139), DE (300), NM (0), WY (62)
 
-👉 [Agendá tu llamada](https://calendly.com/financers/llamada)
+👉 **Agendá tu llamada sin costo con:** [Matías Gasser](https://calendly.com/mgasser-ueq/30min) o con el Cr. Mira Salas [aquí](https://calendly.com/crmirasalas/30min)
 """),
             ("¿Qué es el RA, Sunbiz o Franchise Tax?",
              """- **RA:** agente registrado (USD 100/año)
 - **Sunbiz:** registro estatal obligatorio en Florida (USD 139)
 - **Franchise Tax:** impuesto anual de Delaware (USD 300)
 
-👉 [Agendá tu llamada](https://calendly.com/financers/llamada)
+👉 **Agendá tu llamada sin costo con:** [Matías Gasser](https://calendly.com/mgasser-ueq/30min) o con el Cr. Mira Salas [aquí](https://calendly.com/crmirasalas/30min)
 """),
             ("¿Puedo pagarme un sueldo desde la LLC?",
              """Si no sos residente fiscal en EE.UU., podés hacer transferencias personales como retiro de utilidades.
 
 Si sos residente o tenés actividad física allá, necesitás registrarte como empleador.
 
-👉 [Agendá tu llamada](https://calendly.com/financers/llamada)
+👉 **Agendá tu llamada sin costo con:** [Matías Gasser](https://calendly.com/mgasser-ueq/30min) o con el Cr. Mira Salas [aquí](https://calendly.com/crmirasalas/30min)
 """),
             ("¿Cómo declaro en Argentina los ingresos desde la LLC?",
              """Se declaran como ingresos de fuente extranjera en el Impuesto a las Ganancias.
 
 También pueden estar alcanzados por Bienes Personales. Consultá con tu contador local.
 
-👉 [Agendá tu llamada](https://calendly.com/financers/llamada)
+👉 **Agendá tu llamada sin costo con:** [Matías Gasser](https://calendly.com/mgasser-ueq/30min) o con el Cr. Mira Salas [aquí](https://calendly.com/crmirasalas/30min)
 """)
         ],
         "Cuenta bancaria": [
             ("¿Qué banco recomiendan?",
-             """Usamos Relay Financial como primera opción:
+             """Usamos Relay y Mercury Financial como primera opción:
 
 - 100% online
 - Multiusuario
 - Recibe pagos de Stripe, Wise, Deel, Payoneer
 - No requiere residencia en EE.UU.
 
-👉 [Agendá tu llamada](https://calendly.com/financers/llamada)
+👉 **Agendá tu llamada sin costo con:** [Matías Gasser](https://calendly.com/mgasser-ueq/30min) o con el Cr. Mira Salas [aquí](https://calendly.com/crmirasalas/30min)
 """),
             ("¿Puedo abrir una cuenta como extranjero?",
              """Sí. No necesitás visa ni estar en EE.UU.
@@ -334,26 +334,26 @@ Solo necesitás:
 - Documentación societaria
 - Pasaporte vigente
 
-👉 [Agendá tu llamada](https://calendly.com/financers/llamada)
+👉 **Agendá tu llamada sin costo con:** [Matías Gasser](https://calendly.com/mgasser-ueq/30min) o con el Cr. Mira Salas [aquí](https://calendly.com/crmirasalas/30min)
 """),
             ("¿Qué necesito para abrir la cuenta?",
              """- LLC registrada
 - EIN emitido
 - Articles of Organization + Operating Agreement
 - Pasaporte
-- Formulario KYC del banco
+- Servicio a tu nombre
 
-👉 [Agendá tu llamada](https://calendly.com/financers/llamada)
+👉 **Agendá tu llamada sin costo con:** [Matías Gasser](https://calendly.com/mgasser-ueq/30min) o con el Cr. Mira Salas [aquí](https://calendly.com/crmirasalas/30min)
 """),
             ("¿Puedo transferir fondos desde Argentina u otros países?",
              """Sí. Relay permite recibir transferencias SWIFT desde el exterior y también operar con Wise, Payoneer, etc.
 
-👉 [Agendá tu llamada](https://calendly.com/financers/llamada)
+👉 **Agendá tu llamada sin costo con:** [Matías Gasser](https://calendly.com/mgasser-ueq/30min) o con el Cr. Mira Salas [aquí](https://calendly.com/crmirasalas/30min)
 """),
             ("¿Qué pasa si no puedo completar el onboarding?",
              """Nuestro equipo te ayuda a corregir errores y reintentar. Si Relay no aprueba, usamos Mercury, IFB u otras opciones.
 
-👉 [Agendá tu llamada](https://calendly.com/financers/llamada)
+👉 **Agendá tu llamada sin costo con:** [Matías Gasser](https://calendly.com/mgasser-ueq/30min) o con el Cr. Mira Salas [aquí](https://calendly.com/crmirasalas/30min)
 """)
         ]
     }
