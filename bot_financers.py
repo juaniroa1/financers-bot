@@ -132,7 +132,7 @@ if intencion == "Declarar impuestos":
             elif estado == "Delaware":
                 st.markdown("- Agente registrado: USD 100\n- Franchise Tax: USD 300")
 
-            st.markdown("[Agendá tu llamada para avanzar](https://calendly.com/financers/llamada)")
+            st.markdown("**Agendá tu llamada sin costo con:** [Matías Gasser](https://calendly.com/mgasser-ueq/30min) o con el Cr. Mira Salas [aquí](https://calendly.com/crmirasalas/30min)")
 
     else:
         st.warning("Para declarar impuestos primero debés tener una LLC. Podemos ayudarte con la apertura.")
