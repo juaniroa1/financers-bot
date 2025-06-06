@@ -203,8 +203,8 @@ if intencion == "Preguntas frecuentes":
 - **Florida** es excelente si vas a invertir en inmuebles, operar con cuentas bancarias locales o necesitás tener presencia en un estado comercialmente activo.
 - **Delaware** es el más prestigioso desde el punto de vista legal. Muy recomendado para startups, empresas tecnológicas o si vas a levantar capital o tener inversores.
 
-👉 [Agendá tu llamada](https://calendly.com/financers/llamada)
-"""),
+👉 👉 **Agendá tu llamada sin costo con:** [Matías Gasser](https://calendly.com/mgasser-ueq/30min) o con el Cr. Mira Salas [aquí](https://calendly.com/crmirasalas/30min)
+),
             ("¿Qué incluye el servicio de apertura?",
              """Nuestro servicio incluye:
 
