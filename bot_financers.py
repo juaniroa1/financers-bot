@@ -2,6 +2,19 @@ import streamlit as st
 
 st.title("Asesor Virtual - FINANCERS")
 
+# 🔒 Ocultar menú superior, GitHub, Share, etc.
+hide_streamlit_style = """
+    <style>
+    #MainMenu {visibility: hidden;}
+    footer {visibility: hidden;}
+    header {visibility: hidden;}
+    .stDeployButton, .st-emotion-cache-1h0z5md {display: none !important;}
+    .css-1lsmgbg.egzxvld1 {display: none;} /* Oculta el botón de editar */
+    .css-h5rgaw {display: none;} /* Oculta el ícono de GitHub */
+    </style>
+"""
+st.markdown(hide_streamlit_style, unsafe_allow_html=True)
+
 st.markdown("Ayudamos a extranjeros a operar legalmente en EE.UU. con soluciones simples, seguras y claras.")
 st.markdown("Seleccioná el servicio sobre el cual querés recibir información:")
 
