@@ -6,7 +6,7 @@ st.markdown("Ayudamos a extranjeros a operar legalmente en EE.UU. con soluciones
 st.markdown("Seleccioná el servicio sobre el cual querés recibir información:")
 
 intencion = st.selectbox("¿Cómo podemos ayudarte?", [
-    "", "Abrir una LLC", "Declarar impuestos", "Abrir una cuenta bancaria", "¿Quiénes somos?", "Preguntas frecuentes"
+    "", "¿Quiénes somos?" ,"Abrir una LLC", "Declarar impuestos", "Abrir una cuenta bancaria", "Preguntas frecuentes"
 ])
 
 
@@ -32,6 +32,8 @@ if intencion == "¿Quiénes somos?":
     st.subheader("¿Quiénes somos en FINANCERS?")
     st.markdown("""
 Somos un equipo contable-financiero offshore en Estados Unidos y Argentina que colabora con inversores, empresas tecnológicas y estudios contables de Latinoamérica.
+
+Contamos con **más de 1000 clientes** y un equipo de **15 profesionales especializados**, distribuidos entre **Argentina, Estados Unidos y Alemania**, enfocados en cada etapa del proceso: formación de LLCs, cumplimiento fiscal, y apertura de cuentas bancarias.
 
 Nos especializamos en ofrecer soluciones para que puedas gestionar tu contabilidad en Estados Unidos de manera segura y confiable, hablando tu mismo idioma y permitiéndote trabajar con tranquilidad.
 """)
