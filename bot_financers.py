@@ -6,7 +6,7 @@ st.markdown("Ayudamos a extranjeros a operar legalmente en EE.UU. con soluciones
 st.markdown("Seleccioná el servicio sobre el cual querés recibir información:")
 
 intencion = st.selectbox("¿Cómo podemos ayudarte?", [
-    "", "Abrir una LLC", "Declarar impuestos", "Abrir una cuenta bancaria", "Enviar una consulta personalizada", "¿Quiénes somos?", "Preguntas frecuentes"
+    "", "Abrir una LLC", "Declarar impuestos", "Abrir una cuenta bancaria", "¿Quiénes somos?", "Preguntas frecuentes"
 ])
 
 
